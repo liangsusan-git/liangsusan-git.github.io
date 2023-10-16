@@ -196,8 +196,8 @@
 }
 .column {
   float: left;
-  width: 30%;
-  padding: 10px;
+  width: 48%;
+  padding: 5px;
 }
 
 /* Clear floats after the columns */
@@ -216,11 +216,12 @@
 
 <body data-new-gr-c-s-check-loaded="14.1022.0" data-gr-ext-installed="">
   <div class="header">
-    <h1>AV-NeRF: Learning Neural Fields for Real-World Audio-Visual Scene Synthesis</h1>
+    <h1>AV-NeRF: Learning Neural Fields for Real-World <br> Audio-Visual Scene Synthesis</h1>
+    <h2> NeurIPS 2023 </h2>
     <h2>&nbsp;<font color="black">Susan Liang<sup>1</sup></font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="black">Chao Huang<sup>1</sup>&nbsp;&nbsp;&nbsp;&nbsp;</font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="black">Yapeng Tian<sup>1</sup></font><br><font color="black">Anurag Kumar<sup>2</sup></font>&nbsp;&nbsp;&nbsp;&nbsp;<font color="black">Chenliang Xu<sup>1</sup></font></h2>
     <h3><sup>1</sup>University of Rochester&nbsp;&nbsp;&nbsp;&nbsp;<sup>2</sup>Meta Reality Labs Research</h3>
     <h4><span class="dl-list">
-      <a onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;link&#39;, &#39;download&#39;, &#39;paper-main&#39;);" href="https://arxiv.org/abs/2302.02088" target="_blank">[Paper]</a>
+      <a onclick="ga(&#39;send&#39;, &#39;event&#39;, &#39;link&#39;, &#39;download&#39;, &#39;paper-main&#39;);" href="https://arxiv.org/abs/2302.02088" target="_blank">[Paper (arxiv)]</a>
     </span></h4> 
   </div>
 
@@ -230,223 +231,72 @@
     </center>
     <header><i>Abstract</i></header>
     <p><i><font size="2">
-    Human perception of the complex world relies on a comprehensive analysis of multi-modal signals, and the co-occurrences of audio and video signals provide humans with rich cues. This paper focuses on novel audio-visual scene synthesis in the real world. Given a video recording of an audio-visual scene, the task is to synthesize new videos with spatial audios along arbitrary novel camera trajectories in that audio-visual scene. Directly using a NeRF-based model for audio synthesis is insufficient due to its lack of prior knowledge and acoustic supervision. To tackle the challenges, we first propose an acoustic-aware audio generation module that integrates our prior knowledge of audio propagation into NeRF, in which we associate audio generation with the 3D geometry of the visual environment. In addition, we propose a coordinate transformation module that expresses a viewing direction relative to the sound source. Such a direction transformation helps the model learn sound source-centric acoustic fields. Moreover, we utilize a head-related impulse response function to synthesize pseudo binaural audio for data augmentation that strengthens training. We qualitatively and quantitatively demonstrate the advantage of our model on real-world audio-visual scenes. We refer interested readers to view our video results for convincing comparisons.
+    Can machines recording an audio-visual scene produce realistic, matching audio-visual experiences at novel positions and novel view directions? We answer it by studying a new task---real-world audio-visual scene synthesis---and a first-of-its-kind NeRF-based approach for multimodal learning. Concretely, given a video recording of an audio-visual scene, the task is to synthesize new videos with spatial audios along arbitrary novel camera trajectories in that scene. We propose an acoustic-aware audio generation module that integrates prior knowledge of audio propagation into NeRF, in which we implicitly associate audio generation with the 3D geometry and material properties of a visual environment. Furthermore, we present a coordinate transformation module that expresses a view direction relative to the sound source, enabling the model to learn sound source-centric acoustic fields. To facilitate the study of this new task, we collect a high-quality Real-World Audio-Visual Scene (RWAVS) dataset. We demonstrate the advantages of our method on this real-world dataset and the simulation-based SoundSpaces dataset.
     </font></i></p>
 
   </section>
 
 <section>
+  <header>Task Definition</header>
+  <hr class="midhr">
+  <p>The real-world audio-visual scene synthesis task is to generate visual frames and corresponding binaural audios for arbitrary camera trajectories. In this task, a static environment is given along with multiple observations of the environment. Each observation comprises the camera pose (p=(x,y,z,&theta;,&phi;)), the mono source audio clip (a_s), the recorded binaural audio (a_t), and the image (I). The objective is to synthesize a new binaural audio and a novel view based on a camera pose query and a source audio. It is important to note that the camera pose query is distinct from the camera poses in all observations.</p>
+
+  <p>To intuitively understand this task, consider the following video example: Given audio-visual observations captured from three different poses (1, 2, and 3), the task is to synthesize the visual image and the binaural audio for a new pose (4). </p>
+  <center><video controls src="source/videos/definition_crop.mp4" width=100%></center>
+  <br>
+</section>
+<section>
   <header>Model Overview</header>
   <hr class="midhr">
-  <center><img src="source/model.svg" alt="feature", height="320"></center>
-  <p> <B>Model overview: </B>Given the position (x,y,z) and viewing direction (&theta;,&phi;) of a listener, our method can render an image the listener would see and the corresponding binaural audio the listener would hear. Our model consists of V-NeRF, A-NeRF, and AV-Bridge. V-NeRF learns to generate acoustic masks, A-NeRF learns to generate visual frames and AV-Bridge is optimized to extract geometric information from V-NeRF and incorporate this information into A-NeRF.</p> 
+  <center><img src="source/framework.svg" alt="feature", height="320"></center>
+  <p> <B>The pipeline of our method. </B> Given the position (x,y,z) and viewing direction (&theta;,&phi;) of a listener, our method can render an image the listener would see and the corresponding binaural audio the listener would hear. Our model consists of V-NeRF, A-NeRF, and AV-Mapper. A-NeRF learns to generate acoustic masks, V-NeRF learns to generate visual frames, and AV-Mapper is optimized to integrate geometry and material information extracted from V-NeRF into A-NeRF.</p> 
   <br>
-
-</section>
-	
-<section>
-  <header> Results on Real-World Audio-Visual Scenes</header>
-  <hr class="midhr">
-  <div style="text-align:center"> 
-  <p>Different from past audio-visual learning works, this paper focuses on the synthesis of novel audio-visual scenes in the real world. We define <B>novel audio-visual scene synthesis</B> as a task to synthesize a target video, including visual frames and the corresponding spatial audio, along an arbitrary camera trajectory from given source videos and trajectories. Learning from source video in a real-world environment with binaural audio, the generated target spatial audio and video frames are expected to be consistent with the given camera trajectory visually as well as acoustically to ensure perceptual realism and immersion.</p>
-  <p>Below you will find videos of our results on Real-World Audio-Visual Scenes. We show the videos we used for training and the videos rendered by different methods, including Mono-Mono, Baseline and Ours. In each video, we show the camera trajectory, sound source, audio level of two channels, rendered visual frames and rendered binaural audios. Because we target modeling acoustic fields and establishing the correlation between visual and acoustic worlds in this paper, we use the same visual rendering results when we compare the acoustic results of different methods. <font color="red"><B>Please wear headphones when watching videos.</B></font></p>
-  <p style="font-size:180%;">We first compare results in the large room. </p>
-  <div class="row">
-    <div class="column">
-    </div>
-    <div class="column">
-      <h3><center>Input Video</center><h3>
-      <video controls src="source/videos/largeroom_train.mp4" width=100%> </video>
-    </div>
-    <div class="column">
-    </div>
-  </div>
-  <p style="font-size:180%;"> We show the 360-degree rendering results.</p>
-  <div class="row">
-    <div class="column">
-      <h3><center>Mono-Mono</center></h3>
-      <video controls src="source/videos/largeroom_360_mono.mp4" width=100%> </video>
-    </div>
-    <div class="column">
-      <h3><center>Baseline</center></h3>
-      <video controls src="source/videos/largeroom_360_baseline.mp4" width=100%> </video>
-    </div>
-    <div class="column">
-      <h3><center>Ours</center></h3>
-      <video controls src="source/videos/largeroom_360_avnerf.mp4" width=100%> </video>
-    </div>
-  </div>
-  <p style="font-size:180%;">We show the left-to-right rendering results.</p>
-  <div class="row">
-    <div class="column">
-      <h3><center>Mono-Mono</center></h3>
-      <video controls src="source/videos/largeroom_lr_mono.mp4" width=100%> </video>
-    </div>
-    <div class="column">
-      <h3><center>Baseline</center></h3>
-      <video controls src="source/videos/largeroom_lr_baseline.mp4" width=100%> </video>
-    </div>
-    <div class="column">
-      <h3><center>Ours</center></h3>
-      <video controls src="source/videos/largeroom_lr_avnerf.mp4" width=100%> </video>
-    </div>
-  </div>
-  <br><br>
-
-  <p style="font-size:180%;">We then compare results in the medium room. </p>
-  <div class="row">
-    <div class="column">
-    </div>
-    <div class="column">
-      <h3><center>Input Video</center></h3>
-      <video controls src="source/videos/middleroom_train.mp4" width=100%> </video>
-    </div>
-    <div class="column">
-    </div>
-  </div>
-
-  <p style="font-size:180%;">We show the 360-degree rendering results.</p>
-  <div class="row">
-    <div class="column">
-      <h3><center>Mono-Mono</center></h3>
-      <video controls src="source/videos/middleroom_360_mono.mp4" width=100%> </video>
-    </div>
-    <div class="column">
-      <h3><center>Baseline</center></h3>
-      <video controls src="source/videos/middleroom_360_baseline.mp4" width=100%> </video>
-    </div>
-    <div class="column">
-      <h3><center>Ours</center></h3>
-      <video controls src="source/videos/middleroom_360_avnerf.mp4" width=100%> </video>
-    </div>
-  </div>
-
-  <p style="font-size:180%;">We show the left-to-right rendering results.</p>
-  <div class="row">
-    <div class="column">
-      <h3><center>Mono-Mono</center></h3>
-      <video controls src="source/videos/middleroom_lr_mono.mp4" width=100%> </video>
-    </div>
-    <div class="column">
-      <h3><center>Baseline</center></h3>
-      <video controls src="source/videos/middleroom_lr_baseline.mp4" width=100%> </video>
-    </div>
-    <div class="column">
-      <h3><center>Ours</center></h3>
-      <video controls src="source/videos/middleroom_lr_avnerf.mp4" width=100%> </video>
-    </div>
-  </div>
-  
 </section>
 
 <section>
-  <header> Results on FAIR-PLAY</header>
+  <header> Demo Videos</header>
   <hr class="midhr">
   <div style="text-align:center"> 
-  <p>Below you will find videos of our results on the FAIR-PLAY Dataset. We compare our method with MONO2BINAURAL and PSEUDO2BINAURAL. We show results in four scenes, which are Harp, Cello, Drum, and Guitar. For each scene, we show the ground-truth video and synthesized videos by different methods. Considering that MONO2BINAURAL and PSEUDO2BINAURAL do not support novel view synthesis, we input retrieved visual frames with the nearest camera pose to these two models. <font color="red"><B>Please wear headphones when watching videos.</B></font></p>
-  <p style="font-size:180%;">We show the results in the Harp scene.</p>
-  <div class="row">
-    <div class="column">
-    </div>
-    <div class="column">
-      <h3><center>Ground-Truth Video</center></h3>
-      <video controls src="source/videos/harp_test.mp4" width=100%> </video>
-    </div>
-    <div class="column">
-    </div>
-  </div>
+  <p>Below, you will find videos showcasing our results on the RWAVS dataset. Each video includes the camera trajectory, sound source, audio levels of two channels, rendered visual frames, and rendered binaural audio. The camera trajectory is displayed in the top left corner, with blue triangles representing camera poses of training samples and red triangles representing novel poses. The sound source is shown both in the camera trajectory and in the rendered visual frames. To provide an intuitive understanding of the energy of the synthesized binaural audio, we visualize the energy levels of both the left and right channels in the bottom left corner. Our model exhibits three key characteristics, which are prominently highlighted in these videos:</p>
+  <ul>
+    <li>AV-NeRF enables the synthesis of audio-visual scenes for <B>arbitrary</B> camera poses (viewpoints).</li>
+    <li>AV-NeRF is <B>distance-sensitive</B>: when the camera approaches or moves away, the volume of synthesized binaural sound adjusts accordingly.</li>
+    <li>AV-NeRF is <B>direction-aware</B>: when the sound source moves from one side (left/right) of the camera view to another side (right/left), the volume difference between the two channels will adapts accordingly.</li>
+  </ul>
+  <p><font color="red"><B>Please wear headphones when watching videos.</B></font></p>
 
   <div class="row">
     <div class="column">
-      <h3><center>MONO2BINAURAL</center></h3>
-      <video controls src="source/videos/harp_m2b.mp4" width=100%> </video>
+      <video controls src="source/videos/1.mp4" width=100%> </video>
     </div>
     <div class="column">
-      <h3><center>PSEUDO2BINAURAL</center></h3>
-      <video controls src="source/videos/harp_p2b.mp4" width=100%> </video>
+      <video controls src="source/videos/2.mp4" width=100%> </video>
     </div>
     <div class="column">
-      <h3><center>Ours</center></h3>
-      <video controls src="source/videos/harp_avnerf.mp4" width=100%> </video>
+      <video controls src="source/videos/3.mp4" width=100%> </video>
+    </div>
+    <div class="column">
+      <video controls src="source/videos/4.mp4" width=100%> </video>
+    </div>
+    <div class="column">
+      <video controls src="source/videos/5.mp4" width=100%> </video>
+    </div>
+    <div class="column">
+      <video controls src="source/videos/7.mp4" width=100%> </video>
+    </div>
+    <div class="column">
+      <video controls src="source/videos/6.mp4" width=100%> </video>
+    </div>
+    <div class="column">
+      <video controls src="source/videos/8.mp4" width=100%> </video>
     </div>
   </div>
-  <br><br>
+</section>
 
-  <p style="font-size:180%;">We show the results in the Cello scene.</p>
-  <div class="row">
-    <div class="column">
-    </div>
-    <div class="column">
-      <h3><center>Ground-Truth</center></h3>
-      <video controls src="source/videos/cello_test.mp4" width=100%> </video>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="column">
-      <h3><center>MONO2BINAURAL</center></h3>
-      <video controls src="source/videos/cello_m2b.mp4" width=100%> </video>
-    </div>
-    <div class="column">
-      <h3><center>PSEUDO2BINAURAL</center></h3>
-      <video controls src="source/videos/cello_p2b.mp4" width=100%> </video>
-    </div>
-    <div class="column">
-      <h3><center>Ours</center></h3>
-      <video controls src="source/videos/cello_avnerf.mp4" width=100%> </video>
-    </div>
-  </div>
-  <br><br>
-
-  <p style="font-size:180%;">We show the results in the Drum scene.</p>
-  <div class="row">
-    <div class="column">
-    </div>
-    <div class="column">
-      <h3><center>Ground-Truth</center></h3>
-      <video controls src="source/videos/drum_test.mp4" width=100%> </video>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="column">
-      <h3><center>MONO2BINAURAL</center></h3>
-      <video controls src="source/videos/drum_m2b.mp4" width=100%> </video>
-    </div>
-    <div class="column">
-      <h3><center>PSEUDO2BINAURAL</center></h3>
-      <video controls src="source/videos/drum_p2b.mp4" width=100%> </video>
-    </div>
-    <div class="column">
-      <h3><center>Ours</center></h3>
-      <video controls src="source/videos/drum_avnerf.mp4" width=100%> </video>
-    </div>
-  </div>
-  <br><br>
-
-  <p style="font-size:180%;">We show the results in the Guitar scene.</p>
-  <div class="row">
-    <div class="column">
-    </div>
-    <div class="column">
-      <h3><center>Ground-Truth</center></h3>
-      <video controls src="source/videos/guitar_test.mp4" width=100%> </video>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="column">
-      <h3><center>MONO2BINAURAL</center></h3>
-      <video controls src="source/videos/guitar_m2b.mp4" width=100%> </video>
-    </div>
-    <div class="column">
-      <h3><center>PSEUDO2BINAURAL</center></h3>
-      <video controls src="source/videos/guitar_p2b.mp4" width=100%> </video>
-    </div>
-    <div class="column">
-      <h3><center>Ours</center></h3>
-      <video controls src="source/videos/guitar_avnerf.mp4" width=100%> </video>
-    </div>
-  </div>
-  
+<section>
+  <header> RWAVS Dataset</header>
+  <hr class="midhr">
+  <div style="text-align:center"> 
+  <p>Below, you will find videos displaying training samples from the RWAVS dataset, which encompasses diverse environments and a wide range of camera poses. We recorded videos in both indoor and outdoor environments, which we believe represent most daily settings. During data recording, we randomly moved around the environment while holding the device, allowing us to capture various acoustic and visual signals corresponding to different camera poses.</p>
+  <center><video controls src="source/videos/dataset.mp4" width=100%></center>
 </section>
