@@ -76,7 +76,7 @@
     p,
     a {
       font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 14px
+      font-size: 16px
     }
     
     strong {
@@ -86,7 +86,7 @@
     
     heading {
       font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 21px;
+      font-size: 24px;
     }
     
     papertitle {
@@ -133,10 +133,31 @@
         box-shadow: 3px 3px 6px #888;
     }
 
-    
     span.highlight {
       background-color: #ffffd0;
     }
+
+    hr.mainhr {
+      border: 0px;
+      height: 1px;
+      background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.8), rgba(0,0,0,0)); 
+      background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.8), rgba(0,0,0,0)); 
+      background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.8), rgba(0,0,0,0)); 
+      background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.8), rgba(0,0,0,0)); 
+    }
+    
+    hr.midhr {
+        border: 0px;
+        border-bottom: 1px dashed #ccc;
+        background: #999;
+        margin: 10px 20px;
+    }
+    
+    hr.itemhr {
+        border: 0px;
+        border-bottom: 1px solid #d5d4d4;
+        margin: 10px 20px;
+    } 
   </style>
   <title>Homepage - Susan Liang</title>
   <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
@@ -163,11 +184,13 @@
               <p align="center">
                 <name>Susan Liang</name>
               </p>
-              <p>Hi, there! I am a second-year Ph.D. student in the Computer Science Department at the University of Rochester. My advisor is Prof. <a href="https://scholar.google.com/citations?user=54HfyDIAAAAJ&hl=en">Chenliang Xu</a>. Before joining Prof. Xu's lab, I got my bachelor degree of Computer Science at the University of Chinese Academy of Sciences (UCAS). I was lucky to study and research under the supervision of Prof. <a href="https://scholar.google.com/citations?user=Vkzd7MIAAAAJ&hl=en">Shiguang Shan</a>. I joined Prof. Shan's group in 2020 and had worked there for one and a half years, enjoying an exciting research experience. I also worked closely with Prof. <a href="https://scholar.google.com/citations?user=p9-ohHsAAAAJ&hl=en">Ming-Hsuan Yang</a>. <br/><br/>
+              <p>Hi, there! I am a second-year Ph.D. student in the Computer Science Department at the University of Rochester. My advisor is Prof. <a href="https://scholar.google.com/citations?user=54HfyDIAAAAJ&hl=en">Chenliang Xu</a>. Before joining Prof. Xu's lab, I got my bachelor degree of Computer Science at the University of Chinese Academy of Sciences. I was lucky to study and research under the supervision of Prof. <a href="https://scholar.google.com/citations?user=Vkzd7MIAAAAJ&hl=en">Shiguang Shan</a>. I joined Prof. Shan's group in 2020 and had worked there for one and a half years, enjoying an exciting research experience. I also worked closely with Prof. <a href="https://scholar.google.com/citations?user=p9-ohHsAAAAJ&hl=en">Ming-Hsuan Yang</a>. <br/><br/>
 
-               My research interests lie in Computer Vision and Deep Learning, especially audio-visual multi-modal learning and self-supervised learning.<br/><br/>
+              My research interests lie in Computer Vision and Deep Learning, especially audio-visual multi-modal learning and self-supervised learning.<br/><br/>
 
-               The explanation for my English name: my Chinese name is 梁苏叁 (Liang, Su, San), so Susan is just the *pinyin* of my Chinese name. Commonly, people think I am female when they see my English Name. :D
+              The explanation for my English name: my Chinese name is 梁苏叁 (Liang, Su, San), so Susan is just the *pinyin* of my Chinese name. Commonly, people think I am female when they see my English Name. :D<br/><br/>
+
+              <span style="font-size: 26px">✉</span><span style="color: rgb(197, 66, 66);">️ I am actively looking for research internships for Summer 2024. Feel free to drop me a message if you are interested in.</span>
               </p>
               
               <p>
@@ -187,13 +210,46 @@
         <!-- Selected Projects -->
         <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
         <tr>
-          <td width="40%" valign="middle">
+          <td width="100%" valign="middle">
             <heading>Publication</heading>
           </td>
         </tr>
         </table>
         <table class="pub_table">
           <tbody> 
+            <tr>
+              <td class="pub_td1"><img src="project/avdiff.png" class="papericon"></td>
+              <td class="pub_td2">
+                <div class="publication">
+                  <abbr class="badge" style="background-color:#a3deed"><strong>Coming Soon</strong></abbr>
+                </div>
+                <div class="title">
+                  <font size=3><b>Dream Your Sounding Object Thousand Ways: Language-Guided Audio-Visual Personalization</b></font>
+                </div>
+                <div class="authors">
+                    <b>Susan Liang</b><span style="color: rgb(113, 109, 109);">, Chao Huang, Yapeng Tian, Anurag Kumar, Chenliang Xu.</span>
+                </div>
+              </td>
+            </tr>
+
+            <tr>
+              <td class="pub_td1"><img src="project/avattack.png" class="papericon"></td>
+              <td class="pub_td2">
+                <div class="publication">
+                  <abbr class="badge" style="background-color:#a3deed"><strong>Coming Soon</strong></abbr>
+                </div>
+                <div class="title">
+                  <font size=3><b>Revisit Audio-Visual Adversarial Robustness from Temporal and Modality Correlation Perspectives</b></font>
+                </div>
+                <div class="authors">
+                    <span style="color: rgb(113, 109, 109);">Zeliang Zhang*, </span><b>Susan Liang*</b><span style="color: rgb(113, 109, 109);">, Daiki Shimada*, Chenliang Xu.</span>
+                </div>
+                <div class="contribution">
+                  ∗ indicates equal contribution.
+                </div>
+              </td>
+            </tr>
+
             <tr>
               <td class="pub_td1"><img src="project/avnerf/source/teaser.svg" class="papericon"></td>
               <td class="pub_td2">
@@ -204,7 +260,7 @@
                   <font size=3><b>AV-NeRF: Learning Neural Fields for Real-World Audio-Visual Scene Synthesis</b></font>
                 </div>
                 <div class="authors">
-                    <b>Susan Liang</b>, Chao Huang, Yapeng Tian, Anurag Kumar, Chenliang Xu.
+                    <b>Susan Liang</b><span style="color: rgb(113, 109, 109);">, Chao Huang, Yapeng Tian, Anurag Kumar, Chenliang Xu.</span>
                 </div>
                 <div class="status">
                   Conference on Neural Information Processing Systems, Dec. 2023.
@@ -218,14 +274,17 @@
             <tr>
               <td class="pub_td1"><img src="project/nacf/source/model.png" class="papericon"></td>
               <td class="pub_td2">
+                <div class="publication">
+                  <abbr class="badge" style="background-color:#fcd5ce"><strong>ICCV Workshop 2023</strong></abbr>
+                </div>
                 <div class="title">
                   <font size=3><b>Neural Acoustic Context Field: Rendering Realistic Room Impulse Response With Neural Fields</b></font>
                 </div>
                 <div class="authors">
-                    <b>Susan Liang</b>, Chao Huang, Yapeng Tian, Anurag Kumar, Chenliang Xu
+                    <b>Susan Liang</b><span style="color: rgb(113, 109, 109);">, Chao Huang, Yapeng Tian, Anurag Kumar, Chenliang Xu.</span>
                 </div>
                 <div class="status">
-                  Under Review
+                  International Conference on Computer Vision Workshops, Oct. 2023.
                 </div>
                 <div class="website">
                    <a href="https://arxiv.org/abs/2309.15977">[Paper]</a> <a href="project/nacf/">[Website]</a>
@@ -234,16 +293,16 @@
             </tr>
 
             <tr>
-              <td class="pub_td1"><img src="project/davis.jpg" class="papericon"></td>
+              <td class="pub_td1"><img src="project/davis.png" class="papericon"></td>
               <td class="pub_td2">
                 <div class="title">
                   <font size=3><b>DAVIS: High-Quality Audio-Visual Separation with Generative Diffusion Models</b></font>
                 </div>
                 <div class="authors">
-                    Chao Huang, <b>Susan Liang</b>, Yapeng Tian, Anurag Kumar, Chenliang Xu
+                    <span style="color: rgb(113, 109, 109);">Chao Huang, </span><b>Susan Liang</b><span style="color: rgb(113, 109, 109);">, Yapeng Tian, Anurag Kumar, Chenliang Xu.</span>
                 </div>
                 <div class="status">
-                  Arxiv Preprint
+                  arXiv preprint.
                 </div>
                 <div class="website">
                    <a href="https://arxiv.org/abs/2308.00122">[Paper]</a>
@@ -262,7 +321,7 @@
                   <font size=3><b>UniCon: Unified Context Network for Robust Active Speaker Detection</b></font>
                 </div>
                 <div class="authors">
-                    Yuanhang Zhang∗, <b>Susan Liang∗</b>, Shuang Yang, Xiao Liu, Zhongqin Wu, Shiguang Shan, Xilin Chen.
+                    <span style="color: rgb(113, 109, 109);">Yuanhang Zhang∗, </span><b>Susan Liang∗</b><span style="color: rgb(113, 109, 109);">, Shuang Yang, Xiao Liu, Zhongqin Wu, Shiguang Shan, Xilin Chen.</span>
                 </div>
                 <div class="status">
                   ACM International Conference on Multimedia, Oct. 2021.
