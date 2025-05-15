@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BinauralFlow</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-slider@2.0.4/dist/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bulma-slider@2.0.4/dist/js/bulma-slider.min.js"></script>
+
+  <style>
+    .rainbow {
+      text-align: center;
+      text-decoration: underline;
+      font-size: 32px;
+      font-family: monospace;
+      letter-spacing: 5px;
+    }
+    .rainbow_text_animated {
+      background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: rainbow_animation 6s ease-in-out infinite;
+      background-size: 400% 100%;
+    }
+
+    @keyframes rainbow_animation {
+      0%,100% {
+          background-position: 0 0;
+      }
+      50% {
+          background-position: 100% 0;
+      }
+    }
+
+    .publication-title {
+      margin-bottom: 0.5rem;
+    }
+    .publication-subtitle {
+      margin-bottom: 0.5rem;
+    }
+    .publication-authors {
+      margin-bottom: 0.5rem;
+    }
+    .author-block {
+      display: inline-block;
+      margin-right: 0.5rem;
+    }
+    .link-block {
+      display: inline-block;
+      margin: 0 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              <span class="rainbow_text_animated">BinauralFlow</span>
+            </h1>
+            <h2 class="subtitle is-3 publication-subtitle" style="margin-bottom: 0px;">
+              A Causal and Streamable Approach for High-Quality Binaural Speech Synthesis with Flow Matching Models
+            </h2>
+            <div class="is-size-5 publication-authors" style="width: 80%; margin: 20px auto;">
+              <span class="author-block">Susan Liang<sup style="color:#2c3e50;">1</sup>,</span>
+              <span class="author-block">Dejan Markovic<sup style="color:#2c3e50;">2</sup>,</span>
+              <span class="author-block">Israel D. Gebru<sup style="color:#2c3e50;">2</sup>,</span>
+              <span class="author-block">Steven Krenn<sup style="color:#2c3e50;">2</sup>,</span>
+              <span class="author-block">Todd Keebler<sup style="color:#2c3e50;">2</sup>,</span>
+              <span class="author-block">Jacob Sandakly<sup style="color:#2c3e50;">2</sup>,</span>
+              <span class="author-block">Frank Yu<sup style="color:#2c3e50;">2</sup>,</span>
+              <span class="author-block">Samuel Hassel<sup style="color:#2c3e50;">2</sup>,</span>
+              <span class="author-block">Chenliang Xu<sup style="color:#2c3e50;">1</sup>,</span>
+              <span class="author-block">Alexander Richard<sup style="color:#2c3e50;">2</sup></span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup style="color:#2c3e50">1</sup>University of Rochester,</span>
+              <span class="author-block"><sup style="color:#2c3e50">2</sup>Codec Avatars Lab, Meta</span>
+            </div>
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv (Coming Soon)</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (Coming Soon)</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#citation" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <p style="font-size:18px">📃</p>
+                    </span>
+                    <span>Cite</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Binaural rendering aims to synthesize binaural audio that mimics natural hearing based on a mono audio and the locations of the speaker and listener. Although many methods have been proposed to solve this problem, they struggle with rendering quality and streamable inference. Synthesizing high-quality binaural audio that is indistinguishable from real-world recordings requires precise modeling of binaural cues, room reverb, and ambient sounds. Additionally, real-world applications demand streaming inference. To address these challenges, we propose a flow matching based streaming binaural speech synthesis framework called BinauralFlow. We consider binaural rendering to be a generation problem rather than a regression problem and design a conditional flow matching model to render high-quality audio. Moreover, we design a causal U-Net architecture that estimates the current audio frame solely based on past information to tailor generative models for streaming inference. Finally, we introduce a continuous inference pipeline incorporating streaming STFT/ISTFT operations, a buffer bank, a midpoint solver, and an early skip schedule to improve rendering continuity and speed. Quantitative and qualitative evaluations demonstrate the superiority of our method over SOTA approaches. A perceptual study further reveals that our model is nearly indistinguishable from real-world recordings, with a 42% confusion rate.
+            </p>
+          </div>
+          <figure class="image mt-4">
+            <img src="source/binauralflow.png" alt="BinauralFlow Teaser" style="max-width: 100%; height: auto;">
+            <figcaption class="has-text-centered mt-2" style="font-size: 0.9rem; color: #666;">
+              Continuous inference pipeline. Starting with a mono audio chunk (top left, black solid-line box), we compute its spectrogram via streaming STFT, add noise, and duplicate the channel to form the noisy spectrogram φ<sub>0</sub>(z). The trained model progressively removes the noise with a buffer bank. Finally, streaming ISTFT converts the predicted binaural spectrogram φ<sub>1</sub>(z) into binaural audio. When the next audio chunk appears (black dashed-line box), we repeat the process and synthesize seamlessly continuous binaural speech.
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Demo Videos</h2>
+          <div class="columns is-multiline">
+            <div class="column is-12">
+              <div class="box">
+                <h3 class="title is-5 mb-3">Sample 1</h3>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/Sample1/Flip_Test/sample1_fliptest_ours_gnd.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="column is-12">
+              <div class="box">
+                <h3 class="title is-5 mb-3">Sample 2</h3>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/Sample2/Flip_Test/sample2_fliptest_ours_gnd.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="column is-12">
+              <div class="box">
+                <h3 class="title is-5 mb-3">Sample 3</h3>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/Sample3/Flip_Test/sample3_fliptest_ours_gnd.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Comparison with Baselines</h2>
+          
+          <!-- Sample 1 -->
+          <h3 class="title is-4 mt-6 mb-4">Sample 1</h3>
+          <div class="columns is-multiline">
+            <div class="column is-4">
+              <div class="box">
+                <h4 class="title is-6 mb-3">Mono</h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/Sample1/Comparison/sample1_mono.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="column is-4">
+              <div class="box">
+                <h4 class="title is-6 mb-3">Digitial Signal Processing (DSP)</h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/Sample1/Comparison/sample1_dsp.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="column is-4">
+              <div class="box">
+                <h4 class="title is-6 mb-3">BinauralGrad</h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/Sample1/Comparison/sample1_bgrad.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="column is-4">
+              <div class="box">
+                <h4 class="title is-6 mb-3">SGMSE</h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/Sample1/Comparison/sample1_sgmse.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="column is-4">
+              <div class="box">
+                <h4 class="title is-6 mb-3"><b>Ours</b></h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/Sample1/Comparison/sample1_ours.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sample 2 -->
+          <h3 class="title is-4 mt-6 mb-4">Sample 2</h3>
+          <div class="columns is-multiline">
+            <div class="column is-4">
+              <div class="box">
+                <h4 class="title is-6 mb-3">Mono</h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/Sample2/Comparison/sample2_mono.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="column is-4">
+              <div class="box">
+                <h4 class="title is-6 mb-3">Digitial Signal Processing (DSP)</h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/Sample2/Comparison/sample2_dsp.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="column is-4">
+              <div class="box">
+                <h4 class="title is-6 mb-3">BinauralGrad</h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/Sample2/Comparison/sample2_bgrad.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="column is-4">
+              <div class="box">
+                <h4 class="title is-6 mb-3">SGMSE</h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/Sample2/Comparison/sample2_sgmse.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="column is-4">
+              <div class="box">
+                <h4 class="title is-6 mb-3"><b>Ours</b></h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/Sample2/Comparison/sample2_ours.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sample 3 -->
+          <h3 class="title is-4 mt-6 mb-4">Sample 3</h3>
+          <div class="columns is-multiline">
+            <div class="column is-4">
+              <div class="box">
+                <h4 class="title is-6 mb-3">Mono</h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/Sample3/Comparison/sample3_mono.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="column is-4">
+              <div class="box">
+                <h4 class="title is-6 mb-3">Digitial Signal Processing (DSP)</h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/Sample3/Comparison/sample3_dsp.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="column is-4">
+              <div class="box">
+                <h4 class="title is-6 mb-3">BinauralGrad</h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/Sample3/Comparison/sample3_bgrad.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="column is-4">
+              <div class="box">
+                <h4 class="title is-6 mb-3">SGMSE</h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/Sample3/Comparison/sample3_sgmse.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="column is-4">
+              <div class="box">
+                <h4 class="title is-6 mb-3"><b>Ours</b></h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/Sample3/Comparison/sample3_ours.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="citation">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Citation</h2>
+          <div class="content has-text-justified">
+            <pre style="background-color: #f5f5f5; padding: 1em; border-radius: 4px; overflow-x: auto;">
+@article{binauralflow2025,
+  title={BinauralFlow: A Causal and Streamable Approach for High-Quality Binaural Speech Synthesis with Flow Matching Models},
+  author={Liang, Susan and Markovic, Dejan and Gebru, Israel D. and Krenn, Steven and Keebler, Todd and Sandakly, Jacob and Yu, Frank and Hassel, Samuel and Xu, Chenliang and Richard, Alexander},
+  journal={International Conference on Machine Learning},
+  year={2025}
+}</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>

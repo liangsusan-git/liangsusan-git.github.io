@@ -1,623 +1,440 @@
-
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html>
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-  <meta name=viewport content="width=800">
-  <meta name="generator" content="HTML Tidy for Linux/x86 (vers 11 February 2007), see www.w3.org">
-  <style type="text/css">
-    /* Color scheme stolen from Sergey Karayev */
-    
-    a {
-      color: #1772d0;
-      text-decoration: none;
-    }
-    
-    a:focus,
-    a:hover {
-      color: #f09228;
-      text-decoration: none;
-    }
-    
-    body,
-    table
-    {
-      padding: 5px;
-    }
-    
-    table.exp_table,td.exp_td1,td.exp_td2
-    {
-      padding: 8px;
-      width: 850px;
-          border-collapse: separate;
-          border-spacing: 15px;
-          margin-top: -5px;
-    }
-
-    td.exp_td1
-    {
-      width:50px;
-    }
-    td.exp_td1 img
-    {
-        height:100px;
-        width: 100px;
-    }
-    table.pub_table,td.pro_td1,td.pub_td1,td.pub_td2
-    {
-      padding: 8px;
-      width: 850px;
-          border-collapse: separate;
-          border-spacing: 15px;
-          margin-top: 5px;
-    }
-
-    td.pub_td1
-    {
-      width:50px;
-    }
-    td.pub_td1 img
-    {
-        width: 300px;
-    }
-    td.pro_td1
-    {
-      width:50px;
-    }
-    td.pro_td1 img
-    {
-        height:150px;
-        width: 300px;
-    }
-
-    td,
-    th,
-    tr,
-    p,
-    a {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 15px
-    }
-    
-    strong {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 14px;
-    }
-    
-    heading {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 24px;
-    }
-    
-    papertitle {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 14px;
-      font-weight: 700
-    }
-    
-    name {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 32px;
-    }
-
-    location {
-      font-family: 'Lato', Verdana, Helvetica, sans-serif;
-      font-size: 20px;
-    }
-    
-    .one {
-      width: 160px;
-      height: 160px;
-      position: relative;
-    }
-    
-    .two {
-      width: 160px;
-      height: 160px;
-      position: absolute;
-      transition: opacity .2s ease-in-out;
-      -moz-transition: opacity .2s ease-in-out;
-      -webkit-transition: opacity .2s ease-in-out;
-    }
-    
-    .fade {
-      transition: opacity .2s ease-in-out;
-      -moz-transition: opacity .2s ease-in-out;
-      -webkit-transition: opacity .2s ease-in-out;
-    }
-
-    .papericon {
-        border-radius: 8px; 
-        -moz-box-shadow: 3px 3px 6px #888;
-        -webkit-box-shadow: 3px 3px 6px #888;
-        box-shadow: 3px 3px 6px #888;
-    }
-
-    span.highlight {
-      background-color: #ffffd0;
-    }
-
-    hr.mainhr {
-      border: 0px;
-      height: 1px;
-      background-image: -webkit-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.8), rgba(0,0,0,0)); 
-      background-image: -moz-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.8), rgba(0,0,0,0)); 
-      background-image: -ms-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.8), rgba(0,0,0,0)); 
-      background-image: -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.8), rgba(0,0,0,0)); 
-    }
-    
-    hr.midhr {
-        border: 0px;
-        border-bottom: 1px dashed #ccc;
-        background: #999;
-        margin: 10px 20px;
-    }
-    
-    hr.itemhr {
-        border: 0px;
-        border-bottom: 1px solid #d5d4d4;
-        margin: 10px 20px;
-    } 
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Homepage - Susan Liang</title>
-  <meta http-equiv="Content-Type" content="text/html; charset=us-ascii">
-  <link href='http://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-VDYHMZZ07N"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-  
     gtag('config', 'G-VDYHMZZ07N');
   </script>
-
+  <style>
+    /* Base badge styling */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      font-size: 0.75rem;         /* text-xs */
+      font-weight: 600;           /* font-semibold */
+      letter-spacing: 0.05em;     /* tracking-wide */
+      padding: 0.25rem 0.75rem;   /* same as venue-badge */
+      border-radius: 0.375rem;    /* same as venue-badge */
+      margin-right: 0.5rem;
+    }
+  
+    /* Specific badge types */
+    .badge-award {
+      background-color: #fef3c7; /* bg-yellow-100 */
+      color: #92400e; /* text-yellow-800 */
+    }
+  
+    .badge-oral {
+      background-color: #ffedd5; /* bg-orange-100 */
+      color: #9a3412; /* text-orange-800 */
+    }
+  
+    .badge-hot {
+      background-color: #fecaca; /* bg-red-100 */
+      color: #991b1b; /* text-red-800 */
+    }
+  
+    .link {
+      color: #2563eb; /* text-blue-600 */
+      transition: color 0.2s ease;
+    }
+  
+    .link:hover {
+      color: #f97316; /* hover:text-orange-500 */
+    }
+  
+    /* Venue badge styling */
+    .venue-badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.75rem;
+      border-radius: 0.375rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      background: linear-gradient(135deg, #bfdbfe 0%, #93c5fd 100%);
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      transition: all 0.2s ease;
+    }
+  
+    .venue-badge:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+  </style>
 </head>
 
-<body>
-  <table width="850" border="0" align="center" cellspacing="0" cellpadding="0">
-    <tr>
-      <td>
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-          <tr>
-            <td width="65%" valign="middle">
-              <p align="center">
-                <name>Susan Liang</name>
+<body class="bg-gray-50 font-sans text-gray-800">
+
+  <div class="container mx-auto max-w-5xl px-4 py-8 md:py-12">
+
+    <header class="flex flex-col md:flex-row items-center mb-12 md:mb-16">
+      <div class="md:w-2/3 md:pr-12 text-center md:text-left mb-8 md:mb-0">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">Susan Liang</h1>
+        <p class="text-lg text-gray-700 mb-4 leading-relaxed">
+          Hi, there! I am a third-year Ph.D. student in the Computer Science Department at the University of Rochester. My advisor is Prof. <a href="https://scholar.google.com/citations?user=54HfyDIAAAAJ&hl=en" class="link">Chenliang Xu</a>. Before joining Prof. Xu's lab, I got my bachelor degree of Computer Science at the University of Chinese Academy of Sciences. I was lucky to study and research under the supervision of Prof. <a href="https://scholar.google.com/citations?user=Vkzd7MIAAAAJ&hl=en" class="link">Shiguang Shan</a>. I joined Prof. Shan's group in 2020 and had worked there for one and a half years, enjoying an exciting research experience. I also worked closely with Prof. <a href="https://scholar.google.com/citations?user=p9-ohHsAAAAJ&hl=en" class="link">Ming-Hsuan Yang</a>.
+        </p>
+        <p class="text-lg text-gray-700 mb-4 leading-relaxed">
+          My research interests lie in Computer Vision and Deep Learning, especially audio-visual learning, implicit neural fields, multi-modal learning, and trustworthy AI.
+        </p>
+        <p class="text-md text-gray-600 mb-6 italic bg-gray-100 p-3 rounded-lg border border-gray-200">
+          Fun Fact: my Chinese name is 梁苏叁 (Liang, Su, San), so Susan is just the *pinyin* of my Chinese name. Commonly, people think I am female when they see my English Name. There is an interesting clip about the pronunciation of Susan in the film <a href="https://youtu.be/4Ssu98-P6V4" class="link">Johnny English Reborn</a>. :D
+        </p>
+        <p class="text-lg text-red-600 font-semibold mb-6 p-3 bg-red-50 border border-red-200 rounded-lg">
+          <span class="text-2xl mr-1">✉️</span> I am actively looking for research internships for Summer 2025. Feel free to drop me a message if you are interested in.
+        </p>
+        <nav class="flex justify-center md:justify-start space-x-4">
+          <a href="mailto:sliang22@ur.rochester.edu" class="link font-medium">Email</a>
+          <span class="text-gray-400">/</span>
+          <a href="documents/CV.pdf" class="link font-medium">CV</a>
+          <span class="text-gray-400">/</span>
+          <a href="https://github.com/liangsusan-git" class="link font-medium">Github</a>
+          <span class="text-gray-400">/</span>
+          <a href="https://scholar.google.com/citations?hl=en&user=x3HBE2gAAAAJ&view_op=list_works&gmla=AMpAcmQHFw83RicnhIX7_yE8CmD9-XXV_rbQaNWMU9RznV1aWk9TG2FnElAosWHE_JKSlXq6vmxkBd14rkniDqL0Xrdyi1Nc4tP1GQ" class="link font-medium">Google Scholar</a>
+        </nav>
+      </div>
+      <div class="md:w-1/3 flex justify-center">
+         <img src="image/profile_universial_studio.jpg" alt="Susan Liang profile picture" class="rounded-lg shadow-lg w-64 h-64 md:w-80 md:h-80 object-cover" onerror="this.onerror=null; this.src='https://placehold.co/320x320/e2e8f0/64748b?text=Susan+Liang';">
+      </div>
+    </header>
+
+    <main>
+
+      <section class="mb-12 md:mb-16">
+        <h2 class="text-3xl font-semibold text-gray-900 mb-8 border-b border-gray-300 pb-3">Publications</h2>
+        <div class="space-y-10">
+
+          <article class="flex flex-col md:flex-row md:items-center md:space-x-6">
+            <img src="project/binauralflow/source/binauralflow.png" alt="BinauralFlow Teaser" class="w-64 h-auto object-cover rounded-lg shadow-md flex-shrink-0 mb-4 md:mb-0 mx-auto md:mx-0" onerror="this.onerror=null; this.src='https://placehold.co/256x144/e0f2fe/0891b2?text=BinauralFlow';">
+            <div class="flex-1">
+              <div><span class="venue-badge">ICML 2025</span></div>
+              <h3 class="text-lg font-semibold text-gray-800 mt-1 mb-1">BinauralFlow: A Causal and Streamable Approach for High-Quality Binaural Speech Synthesis with Flow Matching Models</h3>
+              <p class="text-sm text-gray-600 mb-2">
+                <b>Susan Liang</b>, Dejan Markovic, Israel D. Gebru, Steven Krenn, Todd Keebler, Jacob Sandakly, Frank Yu, Samuel Hassel, Chenliang Xu, Alexander Richard.
               </p>
-              <p>Hi, there! I am a third-year Ph.D. student in the Computer Science Department at the University of Rochester. My advisor is Prof. <a href="https://scholar.google.com/citations?user=54HfyDIAAAAJ&hl=en">Chenliang Xu</a>. Before joining Prof. Xu's lab, I got my bachelor degree of Computer Science at the University of Chinese Academy of Sciences. I was lucky to study and research under the supervision of Prof. <a href="https://scholar.google.com/citations?user=Vkzd7MIAAAAJ&hl=en">Shiguang Shan</a>. I joined Prof. Shan's group in 2020 and had worked there for one and a half years, enjoying an exciting research experience. I also worked closely with Prof. <a href="https://scholar.google.com/citations?user=p9-ohHsAAAAJ&hl=en">Ming-Hsuan Yang</a>. <br/><br/>
+              <p class="text-sm text-gray-500">Forty-second International Conference on Machine Learning, Jul. 2025.</p>
+              <div class="mt-2 space-x-3">
+                 <a href="project/binauralflow/" class="link">[Website]</a>
+              </div>
+            </div>
+          </article>
 
-              My research interests lie in Computer Vision and Deep Learning, especially audio-visual learning, implicit neural fields, multi-modal learning, and trustworthy AI.<br/><br/>
-
-              Fun Fact: my Chinese name is 梁苏叁 (Liang, Su, San), so Susan is just the *pinyin* of my Chinese name. Commonly, people think I am female when they see my English Name. There is an interesting clip about the pronunciation of Susan in the film <a href="https://youtu.be/4Ssu98-P6V4">Johnny English Reborn</a>. :D <br/><br/>
-
-              <span style="font-size: 26px">✉</span><span style="color: rgb(197, 66, 66);">️ I am actively looking for research internships for Summer 2025. Feel free to drop me a message if you are interested in.</span>
+          <article class="flex flex-col md:flex-row md:items-center md:space-x-6">
+             <img src="project/vidcomposition.png" alt="VIDCOMPOSITION Teaser" class="w-64 h-auto object-cover rounded-lg shadow-md flex-shrink-0 mb-4 md:mb-0 mx-auto md:mx-0" onerror="this.onerror=null; this.src='https://placehold.co/256x144/e0f2fe/0891b2?text=VidComposition';">
+            <div class="flex-1">
+              <div><span class="venue-badge">CVPR 2025</span></div>
+              <h3 class="text-lg font-semibold text-gray-800 mt-1 mb-1">VIDCOMPOSITION: Can MLLMs Analyze Compositions in Compiled Videos?</h3>
+              <p class="text-sm text-gray-600 mb-2">
+                Yunlong Tang, Junjia Guo, Hang Hua, <b>Susan Liang</b>, Mingqian Feng, Xinyang Li, Rui Mao, Chao Huang, Jing Bi, Zeliang Zhang, Pooyan Fazli, Chenliang Xu.
               </p>
-              
-              <p>
-                <a href="mailto:sliang22@ur.rochester.edu">Email</a> &nbsp&nbsp/&nbsp&nbsp&nbsp
-                <a href="documents/CV.pdf">CV</a>  &nbsp&nbsp/&nbsp&nbsp&nbsp
-                <a href="https://github.com/liangsusan-git">Github</a> &nbsp&nbsp/&nbsp&nbsp&nbsp
-                <a href="https://scholar.google.com/citations?hl=en&user=x3HBE2gAAAAJ&view_op=list_works&gmla=AMpAcmQHFw83RicnhIX7_yE8CmD9-XXV_rbQaNWMU9RznV1aWk9TG2FnElAosWHE_JKSlXq6vmxkBd14rkniDqL0Xrdyi1Nc4tP1GQ">Google Scholar</a>
+              <p class="text-sm text-gray-500">The IEEE/CVF Conference on Computer Vision and Pattern Recognition 2025, Jun. 2025.</p>
+              <div class="mt-2 space-x-3">
+                 <a href="https://arxiv.org/pdf/2411.10979" class="link">[Paper]</a>
+                 <a href="https://yunlong10.github.io/VidComposition/" class="link">[Website]</a>
+                 <a href="https://github.com/yunlong10/VidComposition" class="link">[Code]</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="flex flex-col md:flex-row md:items-center md:space-x-6">
+             <img src="project/avattack.png" alt="AV Attack Teaser" class="w-64 h-auto object-cover rounded-lg shadow-md flex-shrink-0 mb-4 md:mb-0 mx-auto md:mx-0" onerror="this.onerror=null; this.src='https://placehold.co/256x144/e0f2fe/0891b2?text=AV+Attack';">
+            <div class="flex-1">
+              <div><span class="venue-badge">ICLR 2025</span></div>
+              <h3 class="text-lg font-semibold text-gray-800 mt-1 mb-1">Rethinking Audio-Visual Adversarial Vulnerability from Temporal and Modality Perspectives</h3>
+              <p class="text-sm text-gray-600 mb-2">
+                 Zeliang Zhang*, <b>Susan Liang*</b>, Daiki Shimada, Chenliang Xu. (* indicates equal contribution)
               </p>
-            </td>
-            <td width="35%">
-              <img src="image/profile_universial_studio.jpg" width="140%">
-            </td>
-          </tr>
-        </table>
+              <p class="text-sm text-gray-500">The Thirteenth International Conference on Learning Representations, Apr. 2025.</p>
+              <div class="mt-2 space-x-3">
+                 <a href="https://arxiv.org/abs/2502.11858" class="link">[Paper]</a>
+              </div>
+            </div>
+          </article>
 
+          <article class="flex flex-col md:flex-row md:items-center md:space-x-6">
+             <img src="project/ai_animation.jpg" alt="AI Animation Survey Teaser" class="w-64 h-auto object-cover rounded-lg shadow-md flex-shrink-0 mb-4 md:mb-0 mx-auto md:mx-0" onerror="this.onerror=null; this.src='https://placehold.co/256x144/e0f2fe/0891b2?text=AI+Animation';">
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold text-gray-800 mb-1">Generative AI for Cel-Animation: A Survey</h3>
+              <p class="text-sm text-gray-600 mb-2">
+                 Yunlong Tang, Junjia Guo, Pinxin Liu, Zhiyuan Wang, Hang Hua, Jia-Xing Zhong, Yunzhong Xiao, Chao Huang, Luchuan Song, <b>Susan Liang</b>, and Yizhi Song, Liu He, Jing Bi, Mingqian Feng, Xinyang Li, Zeliang Zhang, Chenliang Xu.
+              </p>
+              <p class="text-sm text-gray-500">arXiv preprint.</p>
+              <div class="mt-2 space-x-3">
+                 <a href="https://arxiv.org/pdf/2501.06250" class="link">[Paper]</a>
+                 <a href="https://github.com/yunlong10/Awesome-AI4Animation" class="link">[Website]</a>
+              </div>
+            </div>
+          </article>
 
-        <!-- Selected Projects -->
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-        <tr>
-          <td width="100%" valign="middle">
-            <heading>Publication</heading>
-            <table class="pub_table">
-              <tbody> 
-                <tr>
-                  <td class="pub_td1"><img src="project/binauralflow.png" class="papericon"></td>
-                  <td class="pub_td2">
-                    <div class="publication">
-                      <abbr class="badge" style="background-color:#fcd5ce"><strong>ICML 2025</strong></abbr>
-                    </div>
-                    <div class="title">
-                      <font size=3>BinauralFlow: A Causal and Streamable Approach for High-Quality Binaural Speech Synthesis with Flow Matching Models</font>
-                    </div>
-                    <div class="authors">
-                      <b>Susan Liang</b><span style="color: rgb(113, 109, 109);">, Dejan Markovic, Israel D. Gebru, Steven Krenn, Todd Keebler, Jacob Sandakly, Frank Yu, Samuel Hassel, Chenliang Xu, Alexander Richard.</span>
-                    </div>
-                    <div class="status">
-                      Forty-second International Conference on Machine Learning, Jul. 2025.
-                    </div>
-                  </td>
-                </tr>
+          <article class="flex flex-col md:flex-row md:items-center md:space-x-6">
+             <img src="project/train_bias.png" alt="Train Bias Teaser" class="w-64 h-auto object-cover rounded-lg shadow-md flex-shrink-0 mb-4 md:mb-0 mx-auto md:mx-0" onerror="this.onerror=null; this.src='https://placehold.co/256x144/e0f2fe/0891b2?text=Train+Bias';">
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold text-gray-800 mb-1">Will the Inclusion of Generated Data Amplify Bias Across Generations in Future Image Classification Models?</h3>
+              <p class="text-sm text-gray-600 mb-2">
+                 Zeliang Zhang, Xin Liang, Mingqian Feng, <b>Susan Liang</b>, Chenliang Xu.
+              </p>
+              <p class="text-sm text-gray-500">arXiv preprint.</p>
+              <div class="mt-2 space-x-3">
+                 <a href="https://arxiv.org/pdf/2410.10160" class="link">[Paper]</a>
+              </div>
+            </div>
+          </article>
 
-                <tr>
-                  <td class="pub_td1"><img src="project/vidcomposition.png" class="papericon"></td>
-                  <td class="pub_td2">
-                    <div class="publication">
-                      <abbr class="badge" style="background-color:#fcd5ce"><strong>CVPR 2025</strong></abbr>
-                    </div>
-                    <div class="title">
-                      <font size=3>VIDCOMPOSITION: Can MLLMs Analyze Compositions in Compiled Videos?</font>
-                    </div>
-                    <div class="authors">
-                      <span style="color: rgb(113, 109, 109);">Yunlong Tang, Junjia Guo, Hang Hua, </span><b>Susan Liang</b><span style="color: rgb(113, 109, 109);">, Mingqian Feng, Xinyang Li, Rui Mao, Chao Huang, Jing Bi, Zeliang Zhang, Pooyan Fazli, Chenliang Xu.</span>
-                    </div>
-                    <div class="status">
-                      arXiv preprint.
-                    </div>
-                    <div class="website">
-                       <a href="https://arxiv.org/pdf/2411.10979">[Paper]</a> <a href="https://yunlong10.github.io/VidComposition/">[Website]</a> <a href="https://github.com/yunlong10/VidComposition">[Code]</a> 
-                    </div>
-                  </td>
-                </tr>
+          <article class="flex flex-col md:flex-row md:items-center md:space-x-6">
+             <img src="project/scaling_concept.png" alt="Scaling Concept Teaser" class="w-64 h-auto object-cover rounded-lg shadow-md flex-shrink-0 mb-4 md:mb-0 mx-auto md:mx-0" onerror="this.onerror=null; this.src='https://placehold.co/256x144/e0f2fe/0891b2?text=Scaling+Concept';">
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold text-gray-800 mb-1">Scaling Concept with Text-Guided Diffusion Models</h3>
+              <p class="text-sm text-gray-600 mb-2">
+                 Chao Huang, <b>Susan Liang</b>, Yunlong Tang, Yapeng Tian, Anurag Kumar, Chenliang Xu.
+              </p>
+              <p class="text-sm text-gray-500">arXiv preprint.</p>
+              <div class="mt-2 space-x-3">
+                 <a href="https://arxiv.org/pdf/2410.24151" class="link">[Paper]</a>
+                 <a href="https://wikichao.github.io/ScalingConcept/" class="link">[Website]</a>
+                 <a href="https://github.com/WikiChao/ScalingConcept" class="link">[Code]</a>
+              </div>
+            </div>
+          </article>
 
-                <tr>
-                  <td class="pub_td1"><img src="project/avattack.png" class="papericon"></td>
-                  <td class="pub_td2">
-                    <div class="publication">
-                      <abbr class="badge" style="background-color:#fcd5ce"><strong>ICLR 2025</strong></abbr>
-                    </div>
-                    <div class="title">
-                      <font size=3>Rethinking Audio-Visual Adversarial Vulnerability from Temporal and Modality Perspectives</font>
-                    </div>
-                    <div class="authors">
-                        <span style="color: rgb(113, 109, 109);">Zeliang Zhang*, </span><b>Susan Liang*</b><span style="color: rgb(113, 109, 109);">, Daiki Shimada, Chenliang Xu.</span>
-                    </div>
-                    <div class="status">
-                      The Thirteenth International Conference on Learning Representations, Apr. 2025.
-                    </div>
-                    <div class="contribution">
-                      ∗ indicates equal contribution.
-                    </div>
-                    <div class="website">
-                      <a href="https://arxiv.org/abs/2502.11858">[Paper]</a>
-                    </div>
-                  </td>
-                </tr>
+          <article class="flex flex-col md:flex-row md:items-center md:space-x-6">
+             <img src="project/davis.png" alt="DAVIS Teaser" class="w-64 h-auto object-cover rounded-lg shadow-md flex-shrink-0 mb-4 md:mb-0 mx-auto md:mx-0" onerror="this.onerror=null; this.src='https://placehold.co/256x144/e0f2fe/0891b2?text=DAVIS';">
+            <div class="flex-1">
+              <div>
+                <span class="venue-badge">ACCV 2024</span>
+                <span class="badge badge-award">🏆 Best Paper Honorable Mention</span>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-800 mt-1 mb-1">High-Quality Visually-Guided Sound Separation from Diverse Categories</h3>
+              <p class="text-sm text-gray-600 mb-2">
+                 Chao Huang, <b>Susan Liang</b>, Yapeng Tian, Anurag Kumar, Chenliang Xu.
+              </p>
+              <p class="text-sm text-gray-500">17th Asian Conference on Computer Vision, Dec. 2024.</p>
+              <div class="mt-2 space-x-3">
+                 <a href="https://arxiv.org/abs/2308.00122" class="link">[Paper]</a>
+                 <a href="https://wikichao.github.io/data/projects/DAVIS/" class="link">[Website]</a>
+              </div>
+            </div>
+          </article>
 
-                <tr>
-                  <td class="pub_td1"><img src="project/ai_animation.jpg" class="papericon"></td>
-                  <td class="pub_td2">
-                    <div class="title">
-                      <font size=3>Generative AI for Cel-Animation: A Survey</font>
-                    </div>
-                    <div class="authors">
-                      <span style="color: rgb(113, 109, 109);">Yunlong Tang, Junjia Guo, Pinxin Liu, Zhiyuan Wang, Hang Hua, Jia-Xing Zhong, Yunzhong Xiao, Chao Huang, Luchuan Song, </span><b>Susan Liang</b><span style="color: rgb(113, 109, 109);">, and Yizhi Song, Liu He, Jing Bi, Mingqian Feng, Xinyang Li, Zeliang Zhang, Chenliang Xu.</span>
-                    </div>
-                    <div class="status">
-                      arXiv preprint.
-                    </div>
-                    <div class="website">
-                       <a href="https://arxiv.org/pdf/2501.06250">[Paper]</a> <a href="https://github.com/yunlong10/Awesome-AI4Animation">[Website]</a>
-                    </div>
-                  </td>
-                </tr>
+          <article class="flex flex-col md:flex-row md:items-center md:space-x-6">
+             <img src="project/avedit/source/teaser.svg" alt="AVEdit Teaser" class="w-64 h-auto object-contain rounded-lg shadow-md flex-shrink-0 mb-4 md:mb-0 bg-white p-2 border mx-auto md:mx-0" onerror="this.onerror=null; this.src='https://placehold.co/256x144/e0f2fe/0891b2?text=AVEdit';">
+            <div class="flex-1">
+              <div>
+                <span class="venue-badge">ACCV 2024</span>
+              </div>
+              <h3 class="text-lg font-semibold text-gray-800 mt-1 mb-1">Language-Guided Joint Audio-Visual Editing Via One-Shot Adaptation</h3>
+              <p class="text-sm text-gray-600 mb-2">
+                 <b>Susan Liang</b>, Chao Huang, Yapeng Tian, Anurag Kumar, Chenliang Xu.
+              </p>
+              <p class="text-sm text-gray-500">17th Asian Conference on Computer Vision, Dec. 2024.</p>
+              <div class="mt-2 space-x-3">
+                 <a href="https://arxiv.org/abs/2410.07463" class="link">[Paper]</a>
+                 <a href="project/avedit/" class="link">[Website]</a>
+                 <a href="https://github.com/liangsusan-git/OAVE" class="link">[Dataset]</a>
+              </div>
+            </div>
+          </article>
 
+          <article class="flex flex-col md:flex-row md:items-center md:space-x-6">
+             <img src="project/l2t.png" alt="L2T Teaser" class="w-64 h-auto object-cover rounded-lg shadow-md flex-shrink-0 mb-4 md:mb-0 mx-auto md:mx-0" onerror="this.onerror=null; this.src='https://placehold.co/256x144/e0f2fe/0891b2?text=L2T';">
+            <div class="flex-1">
+              <div><span class="venue-badge">CVPR 2024</span></div>
+              <h3 class="text-lg font-semibold text-gray-800 mt-1 mb-1">Learning to Transform Dynamically for Better Adversarial Transferability</h3>
+              <p class="text-sm text-gray-600 mb-2">
+                 Rongyi Zhu*, Zeliang Zhang*, <b>Susan Liang</b>, Zhuo Liu, Chenliang Xu. (* indicates equal contribution)
+              </p>
+              <p class="text-sm text-gray-500">Conference on Computer Vision and Pattern Recognition, Jun. 2024.</p>
+              <div class="mt-2 space-x-3">
+                 <a href="https://arxiv.org/abs/2405.14077" class="link">[Paper]</a>
+              </div>
+            </div>
+          </article>
 
-                <tr>
-                  <td class="pub_td1"><img src="project/train_bias.png" class="papericon"></td>
-                  <td class="pub_td2">
-                    <div class="title">
-                      <font size=3>Will the Inclusion of Generated Data Amplify Bias Across Generations in Future Image Classification Models?</font>
-                    </div>
-                    <div class="authors">
-                      <span style="color: rgb(113, 109, 109);">Zeliang Zhang, Xin Liang, Mingqian Feng, </span><b>Susan Liang</b><span style="color: rgb(113, 109, 109);">, Chenliang Xu.</span>
-                    </div>
-                    <div class="status">
-                      arXiv preprint.
-                    </div>
-                    <div class="website">
-                       <a href="https://arxiv.org/pdf/2410.10160">[Paper]</a> 
-                    </div>
-                  </td>
-                </tr>
-                
-                <tr>
-                  <td class="pub_td1"><img src="project/scaling_concept.png" class="papericon"></td>
-                  <td class="pub_td2">
-                    <div class="title">
-                      <font size=3>Scaling Concept with Text-Guided Diffusion Models</font>
-                    </div>
-                    <div class="authors">
-                        <span style="color: rgb(113, 109, 109);">Chao Huang, </span><b>Susan Liang</b><span style="color: rgb(113, 109, 109);">, Yunlong Tang, Yapeng Tian, Anurag Kumar, Chenliang Xu.</span>
-                    </div>
-                    <div class="status">
-                      arXiv preprint.
-                    </div>
-                    <div class="website">
-                       <a href="https://arxiv.org/pdf/2410.24151">[Paper]</a> <a href="https://wikichao.github.io/ScalingConcept/">[Website]</a> <a href="https://github.com/WikiChao/ScalingConcept">[Code]</a> 
-                    </div>
-                  </td>
-                </tr>
+          <article class="flex flex-col md:flex-row md:items-center md:space-x-6">
+             <img src="project/text_attack.png" alt="Text Attack Teaser" class="w-64 h-auto object-cover rounded-lg shadow-md flex-shrink-0 mb-4 md:mb-0 mx-auto md:mx-0" onerror="this.onerror=null; this.src='https://placehold.co/256x144/e0f2fe/0891b2?text=Text+Attack';">
+            <div class="flex-1">
+              <div><span class="venue-badge">EACL 2024</span></div>
+              <h3 class="text-lg font-semibold text-gray-800 mt-1 mb-1">Random Smooth-based Certified Defense against Text Adversarial Attack</h3>
+              <p class="text-sm text-gray-600 mb-2">
+                 Zeliang Zhang, Wei Yao, <b>Susan Liang</b>, Chenliang Xu.
+              </p>
+              <p class="text-sm text-gray-500">Conference of the European Chapter of the Association for Computational Linguistics, Mar. 2024.</p>
+              <div class="mt-2 space-x-3">
+                 <a href="https://aclanthology.org/2024.findings-eacl.83.pdf" class="link">[Paper]</a>
+              </div>
+            </div>
+          </article>
 
-                <tr>
-                  <td class="pub_td1"><img src="project/davis.png" class="papericon"></td>
-                  <td class="pub_td2">
-                    <div class="publication">
-                      <abbr class="badge" style="background-color:#fcd5ce"><strong>ACCV 2024</strong></abbr>
-                      <abbr class="badge" style="background-color:#fea99a"><strong>Best Paper Honorable Mention</strong></abbr> 🏆🏆🏆
-                    </div>
-                    <div class="title">
-                      <font size=3>High-Quality Visually-Guided Sound Separation from Diverse Categories</font>
-                    </div>
-                    <div class="authors">
-                        <span style="color: rgb(113, 109, 109);">Chao Huang, </span><b>Susan Liang</b><span style="color: rgb(113, 109, 109);">, Yapeng Tian, Anurag Kumar, Chenliang Xu.</span>
-                    </div>
-                    <div class="status">
-                      17th Asian Conference on Computer Vision, Dec. 2024.
-                    </div>
-                    <div class="website">
-                       <a href="https://arxiv.org/abs/2308.00122">[Paper]</a> <a href="https://wikichao.github.io/data/projects/DAVIS/">[Website]</a>
-                    </div>
-                  </td>
-                </tr>
+          <article class="flex flex-col md:flex-row md:items-center md:space-x-6">
+             <img src="project/vid_llm.png" alt="Video LLM Survey Teaser" class="w-64 h-auto object-cover rounded-lg shadow-md flex-shrink-0 mb-4 md:mb-0 mx-auto md:mx-0" onerror="this.onerror=null; this.src='https://placehold.co/256x144/e0f2fe/0891b2?text=Video+LLM';">
+            <div class="flex-1">
+               <div>
+                 <span class="venue-badge">TCSVT</span>
+                 <span class="badge badge-hot">🔥🔥🔥 HOT</span>
+               </div>
+              <h3 class="text-lg font-semibold text-gray-800 mt-1 mb-1">Video Understanding with Large Language Models: A Survey</h3>
+              <p class="text-sm text-gray-600 mb-2">
+                 Yunlong Tang*, Jing Bi*, Siting Xu*, Luchuan Song*, <b>Susan Liang</b>, Teng Wang, Daoan Zhang, Jie An, Jingyang Lin, Rongyi Zhu, Ali Vosoughi, Chao Huang, Zeliang Zhang, Feng Zheng, Jianguo Zhang, Ping Luo, Jiebo Luo, Chenliang Xu. (* indicates equal contribution)
+              </p>
+              <p class="text-sm text-gray-500">IEEE Transactions on Circuits and Systems for Video Technology.</p>
+              <div class="mt-2 space-x-3">
+                 <a href="https://arxiv.org/abs/2312.17432" class="link">[Paper]</a>
+                 <a href="https://github.com/yunlong10/Awesome-LLMs-for-Video-Understanding" class="link">[Website]</a>
+              </div>
+            </div>
+          </article>
 
+          <article class="flex flex-col md:flex-row md:items-center md:space-x-6">
+             <img src="project/avnerf/source/teaser.svg" alt="AV-NeRF Teaser" class="w-64 h-auto object-contain rounded-lg shadow-md flex-shrink-0 mb-4 md:mb-0 bg-white p-2 border mx-auto md:mx-0" onerror="this.onerror=null; this.src='https://placehold.co/256x144/e0f2fe/0891b2?text=AV-NeRF';">
+            <div class="flex-1">
+              <div><span class="venue-badge">NeurIPS 2023</span></div>
+              <h3 class="text-lg font-semibold text-gray-800 mt-1 mb-1">AV-NeRF: Learning Neural Fields for Real-World Audio-Visual Scene Synthesis</h3>
+              <p class="text-sm text-gray-600 mb-2">
+                 <b>Susan Liang</b>, Chao Huang, Yapeng Tian, Anurag Kumar, Chenliang Xu.
+              </p>
+              <p class="text-sm text-gray-500">Conference on Neural Information Processing Systems, Dec. 2023.</p>
+              <div class="mt-2 space-x-3">
+                 <a href="https://arxiv.org/abs/2302.02088" class="link">[Paper]</a>
+                 <a href="project/avnerf/" class="link">[Website]</a>
+                 <a href="https://github.com/liangsusan-git/AV-NeRF" class="link">[Code/Dataset]</a>
+              </div>
+            </div>
+          </article>
 
-                <tr>
-                  <td class="pub_td1"><img src="project/avedit/source/teaser.svg" class="papericon"></td>
-                  <td class="pub_td2">
-                    <div class="publication">
-                      <abbr class="badge" style="background-color:#fcd5ce"><strong>ACCV 2024</strong></abbr>
-                    </div>
-                    <div class="title">
-                      <font size=3>Language-Guided Joint Audio-Visual Editing Via One-Shot Adaptation</font>
-                    </div>
-                    <div class="authors">
-                        <b>Susan Liang</b><span style="color: rgb(113, 109, 109);">, Chao Huang, Yapeng Tian, Anurag Kumar, Chenliang Xu.</span>
-                    </div>
-                    <div class="status">
-                      17th Asian Conference on Computer Vision, Dec. 2024.
-                    </div>
-                    <div class="website">
-                      <a href="https://arxiv.org/abs/2410.07463">[Paper]</a> <a href="project/avedit/">[Website]</a> <a href="https://github.com/liangsusan-git/OAVE">[Dataset]</a>
-                    </div>
-                  </td>
-                </tr>
+          <article class="flex flex-col md:flex-row md:items-center md:space-x-6">
+             <img src="project/nacf/source/model.png" alt="NACF Teaser" class="w-64 h-auto object-cover rounded-lg shadow-md flex-shrink-0 mb-4 md:mb-0 mx-auto md:mx-0" onerror="this.onerror=null; this.src='https://placehold.co/256x144/e0f2fe/0891b2?text=NACF';">
+            <div class="flex-1">
+              <div><span class="venue-badge">ICCV Workshop 2023</span></div>
+              <h3 class="text-lg font-semibold text-gray-800 mt-1 mb-1">Neural Acoustic Context Field: Rendering Realistic Room Impulse Response With Neural Fields</h3>
+              <p class="text-sm text-gray-600 mb-2">
+                 <b>Susan Liang</b>, Chao Huang, Yapeng Tian, Anurag Kumar, Chenliang Xu.
+              </p>
+              <p class="text-sm text-gray-500">International Conference on Computer Vision Workshops, Oct. 2023.</p>
+              <div class="mt-2 space-x-3">
+                 <a href="https://arxiv.org/abs/2309.15977" class="link">[Paper]</a>
+                 <a href="project/nacf/" class="link">[Website]</a>
+              </div>
+            </div>
+          </article>
 
-                <tr>
-                  <td class="pub_td1"><img src="project/l2t.png" class="papericon"></td>
-                  <td class="pub_td2">
-                    <div class="publication">
-                      <abbr class="badge" style="background-color:#fcd5ce"><strong>CVPR 2024</strong></abbr>
-                    </div>
-                    <div class="title">
-                      <font size=3>Learning to Transform Dynamically for Better Adversarial Transferability</font>
-                    </div>
-                    <div class="authors">
-                       <span style="color: rgb(113, 109, 109);"> Rongyi Zhu*, Zeliang Zhang*, </span><b>Susan Liang</b><span style="color: rgb(113, 109, 109);">, Zhuo Liu, Chenliang Xu.</span>
-                    </div>
-                    <div class="status">
-                      Conference on Computer Vision and Pattern Recognition, Jun. 2024.
-                    </div>
-                    <div class="contribution">
-                      ∗ indicates equal contribution.
-                    </div>
-                    <div class="website">
-                      <a href="https://arxiv.org/abs/2405.14077">[Paper]</a>
-                    </div>
-                  </td>
-                </tr>
+          <article class="flex flex-col md:flex-row md:items-center md:space-x-6">
+             <img src="project/unicon.svg" alt="UniCon Teaser" class="w-64 h-auto object-contain rounded-lg shadow-md flex-shrink-0 mb-4 md:mb-0 bg-white p-2 border mx-auto md:mx-0" onerror="this.onerror=null; this.src='https://placehold.co/256x144/e0f2fe/0891b2?text=UniCon';">
+            <div class="flex-1">
+               <div>
+                 <span class="venue-badge">ACM MM 2021</span>
+                 <span class="badge badge-oral">Oral</span>
+               </div>
+              <h3 class="text-lg font-semibold text-gray-800 mt-1 mb-1">UniCon: Unified Context Network for Robust Active Speaker Detection</h3>
+              <p class="text-sm text-gray-600 mb-2">
+                 Yuanhang Zhang∗, <b>Susan Liang∗</b>, Shuang Yang, Xiao Liu, Zhongqin Wu, Shiguang Shan, Xilin Chen. (* indicates equal contribution)
+              </p>
+              <p class="text-sm text-gray-500">ACM International Conference on Multimedia, Oct. 2021.</p>
+              <div class="mt-2 space-x-3">
+                 <a href="https://arxiv.org/abs/2108.02607" class="link">[Paper]</a>
+                 <a href="https://unicon-asd.github.io/" class="link">[Website]</a>
+              </div>
+            </div>
+          </article>
 
-                <tr>
-                  <td class="pub_td1"><img src="project/text_attack.png" class="papericon"></td>
-                  <td class="pub_td2">
-                    <div class="publication">
-                      <abbr class="badge" style="background-color:#fcd5ce"><strong>EACL 2024</strong></abbr>
-                    </div>
-                    <div class="title">
-                      <font size=3>Random Smooth-based Certified Defense against Text Adversarial Attack</font>
-                    </div>
-                    <div class="authors">
-                      <span style="color: rgb(113, 109, 109);">Zeliang Zhang, Wei Yao, </span><b>Susan Liang</b><span style="color: rgb(113, 109, 109);">, Chenliang Xu.</span>
-                    </div>
-                    <div class="status">
-                      Conference of the European Chapter of the Association for Computational Linguistics, Mar. 2024.
-                    </div>
-                    <div class="website">
-                      <a href="https://aclanthology.org/2024.findings-eacl.83.pdf">[Paper]</a>
-                    </div>
-                  </td>
-                </tr>
+        </div>
+      </section>
 
-                <tr>
-                  <td class="pub_td1"><img src="project/vid_llm.png" class="papericon"></td>
-                  <td class="pub_td2">
-                    <div class="publication">
-                      <abbr class="badge" style="background-color:#fcd5ce"><strong>TCSVT</strong></abbr>
-                      <abbr class="badge"><strong><span style="color:tomato">🔥🔥🔥 HOT</span></strong></abbr>
-                    </div>
-                    <div class="title">
-                      <font size=3>Video Understanding with Large Language Models: A Survey</font>
-                    </div>
-                    <div class="authors">
-                      <span style="color: rgb(113, 109, 109);">Yunlong Tang*, Jing Bi*, Siting Xu*, Luchuan Song, </span><b>Susan Liang</b><span style="color: rgb(113, 109, 109);">, Teng Wang, Daoan Zhang, Jie An, Jingyang Lin, Rongyi Zhu, Ali Vosoughi, Chao Huang, Zeliang Zhang, Feng Zheng, Jianguo Zhang, Ping Luo, Jiebo Luo, Chenliang Xu.</span>
-                    </div>
-                    <div class="contribution">
-                      ∗ indicates equal contribution.
-                    </div>
-                    <div class="status">
-                      IEEE Transactions on Circuits and Systems for Video Technology.
-                    </div>
-                    <div class="website">
-                       <a href="https://arxiv.org/abs/2312.17432">[Paper]</a> <a href="https://github.com/yunlong10/Awesome-LLMs-for-Video-Understanding">[Website]</a> 
-                    </div>
-                  </td>
-                </tr>
+      <section class="mb-12 md:mb-16">
+        <h2 class="text-3xl font-semibold text-gray-900 mb-8 border-b border-gray-300 pb-3">Education</h2>
+        <div class="space-y-6">
+          <div class="flex items-start space-x-4">
+             <img src="image/ur_logo.png" alt="University of Rochester Logo" class="h-16 w-16 object-contain flex-shrink-0" onerror="this.onerror=null; this.src='https://placehold.co/64x64/e2e8f0/64748b?text=UR';">
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">University of Rochester, NY, USA</h3>
+              <p class="text-gray-600">Ph.D. Computer Science</p>
+              <p class="text-sm text-gray-500">Sept. 2022 – Present</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+             <img src="image/ucas_logo.jpeg" alt="University of Chinese Academy of Sciences Logo" class="h-16 w-16 object-contain flex-shrink-0" onerror="this.onerror=null; this.src='https://placehold.co/64x64/e2e8f0/64748b?text=UCAS';">
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800">University of Chinese Academy of Sciences, Beijing, China</h3>
+              <p class="text-gray-600">B.Eng. Computer Science</p>
+              <p class="text-sm text-gray-500">Sept. 2018 – Jul. 2022</p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                <tr>
-                  <td class="pub_td1"><img src="project/avnerf/source/teaser.svg" class="papericon"></td>
-                  <td class="pub_td2">
-                    <div class="publication">
-                      <abbr class="badge" style="background-color:#fcd5ce"><strong>NeurIPS 2023</strong></abbr>
-                    </div>
-                    <div class="title">
-                      <font size=3>AV-NeRF: Learning Neural Fields for Real-World Audio-Visual Scene Synthesis</font>
-                    </div>
-                    <div class="authors">
-                        <b>Susan Liang</b><span style="color: rgb(113, 109, 109);">, Chao Huang, Yapeng Tian, Anurag Kumar, Chenliang Xu.</span>
-                    </div>
-                    <div class="status">
-                      Conference on Neural Information Processing Systems, Dec. 2023.
-                    </div>
-                    <div class="website">
-                      <a href="https://arxiv.org/abs/2302.02088">[Paper]</a> <a href="project/avnerf/">[Website]</a> <a href="https://github.com/liangsusan-git/AV-NeRF">[Code/Dataset]</a>
-                    </div>
-                  </td>
-                </tr>
+      <section class="mb-12 md:mb-16">
+        <h2 class="text-3xl font-semibold text-gray-900 mb-8 border-b border-gray-300 pb-3">Research Experiences</h2>
+        <div class="space-y-6">
+          <div class="flex items-start space-x-4">
+             <img src="image/meta_logo.png" alt="Meta Logo" class="h-16 w-16 object-contain flex-shrink-0" onerror="this.onerror=null; this.src='https://placehold.co/64x64/e2e8f0/64748b?text=Meta';">
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800"><a href="https://about.meta.com/realitylabs/" class="link">Reality Labs Research, Meta</a>, PA, USA</h3>
+              <p class="text-gray-600">Research Scientist Intern</p>
+              <p class="text-sm text-gray-500">May 2024 – Aug. 2024</p>
+              <p class="text-sm text-gray-500">Advisors: Dr. <a href="https://scholar.google.com/citations?user=cyAYD3UAAAAJ&hl=en" class="link">Dejan Markovic</a>, Dr. <a href="https://scholar.google.it/citations?user=5RFgT84AAAAJ&hl=en" class="link">Israel D. Gebru</a>, and Dr. <a href="https://scholar.google.de/citations?user=73DTbNAAAAAJ&hl=de" class="link">Alexander Richard</a></p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+             <img src="image/ucm_logo.png" alt="UC Merced Logo" class="h-16 w-16 object-contain flex-shrink-0" onerror="this.onerror=null; this.src='https://placehold.co/64x64/e2e8f0/64748b?text=UCM';">
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800"><a href="http://vllab.ucmerced.edu/" class="link">Vision and Learning Lab, University of California - Merced</a>, CA, USA</h3>
+              <p class="text-gray-600">Research Intern</p>
+              <p class="text-sm text-gray-500">Sept. 2021 – Mar. 2022</p>
+              <p class="text-sm text-gray-500">Advisors: Prof. <a href="https://scholar.google.com/citations?user=p9-ohHsAAAAJ&hl=en" class="link">Ming-Hsuan Yang</a> and Dr. <a href="https://scholar.google.com/citations?user=Op_tr2IAAAAJ&hl=en" class="link">Taihong Xiao</a></p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+             <img src="image/tsinghua_logo.png" alt="Tsinghua University Logo" class="h-16 w-16 object-contain flex-shrink-0" onerror="this.onerror=null; this.src='https://placehold.co/64x64/e2e8f0/64748b?text=Tsinghua';">
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800"><a href="https://air.tsinghua.edu.cn/EN/" class="link">Institute for AI Industry Research, Tsinghua University</a>, Beijing, China</h3>
+              <p class="text-gray-600">Research Intern</p>
+              <p class="text-sm text-gray-500">Jun. 2021 – Aug. 2021</p>
+              <p class="text-sm text-gray-500">Advisors: Dr. Yizhi Wang and Dr. Hao Xu</p>
+            </div>
+          </div>
+          <div class="flex items-start space-x-4">
+             <img src="image/ucas_logo.jpeg" alt="UCAS Logo" class="h-16 w-16 object-contain flex-shrink-0" onerror="this.onerror=null; this.src='https://placehold.co/64x64/e2e8f0/64748b?text=UCAS';">
+            <div>
+              <h3 class="text-lg font-semibold text-gray-800"><a href="https://vipl.ict.ac.cn/en/" class="link">Visual Information Processing and Learning Group, Chinese Academy of Sciences</a>, Beijing, China</h3>
+              <p class="text-gray-600">Research Assistant</p>
+              <p class="text-sm text-gray-500">Feb. 2020 – Apr. 2021</p>
+              <p class="text-sm text-gray-500">Advisors: Prof. <a href="https://scholar.google.com/citations?user=Vkzd7MIAAAAJ&hl=en" class="link">Shiguang Shan</a> and Dr. <a href="https://scholar.google.com/citations?user=8wizL74AAAAJ&hl=en" class="link">Shuang Yang</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-                <tr>
-                  <td class="pub_td1"><img src="project/nacf/source/model.png" class="papericon"></td>
-                  <td class="pub_td2">
-                    <div class="publication">
-                      <abbr class="badge" style="background-color:#fcd5ce"><strong>ICCV Workshop 2023</strong></abbr>
-                    </div>
-                    <div class="title">
-                      <font size=3>Neural Acoustic Context Field: Rendering Realistic Room Impulse Response With Neural Fields</font>
-                    </div>
-                    <div class="authors">
-                        <b>Susan Liang</b><span style="color: rgb(113, 109, 109);">, Chao Huang, Yapeng Tian, Anurag Kumar, Chenliang Xu.</span>
-                    </div>
-                    <div class="status">
-                      International Conference on Computer Vision Workshops, Oct. 2023.
-                    </div>
-                    <div class="website">
-                       <a href="https://arxiv.org/abs/2309.15977">[Paper]</a> <a href="project/nacf/">[Website]</a>
-                    </div>
-                  </td>
-                </tr>
+    </main>
 
-                <tr>
-                  <td class="pub_td1"><img src="project/unicon.svg" class="papericon"></td>
-                  <td class="pub_td2">
-                    <div class="publication">
-                      <abbr class="badge" style="background-color:#fcd5ce"><strong>ACM MM 2021</strong></abbr>
-                      <abbr class="badge" style="background-color:#fec89a"><strong>Oral</strong></abbr>
-                    </div>
-                    <div class="title">
-                      <font size=3>UniCon: Unified Context Network for Robust Active Speaker Detection</font>
-                    </div>
-                    <div class="authors">
-                        <span style="color: rgb(113, 109, 109);">Yuanhang Zhang∗, </span><b>Susan Liang∗</b><span style="color: rgb(113, 109, 109);">, Shuang Yang, Xiao Liu, Zhongqin Wu, Shiguang Shan, Xilin Chen.</span>
-                    </div>
-                    <div class="status">
-                      ACM International Conference on Multimedia, Oct. 2021.
-                    </div>
-                    <div class="contribution">
-                      ∗ indicates equal contribution.
-                    </div>
-                    <div class="website">
-                      <a href="https://arxiv.org/abs/2108.02607">[Paper]</a> <a href="https://unicon-asd.github.io/">[Website]</a>
-                    </div>
-                  </td>
-                </tr>
-              </tbody>        
-            </table>
-        </td>
-        </tr>
-        </table>
+    <footer class="mt-16 pt-8 border-t border-gray-300 text-center">
+      <p class="text-sm text-gray-500">
+        Website source from <a href="https://haidongz-usc.github.io/" class="link">Haidong Zhu</a>. Great thanks.
+      </p>
+      <p class="text-xs text-gray-400 mt-2">
+        Modernized with Tailwind CSS.
+      </p>
+    </footer>
 
-        <!-- Education -->
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-        <tr>
-          <td width="100%" valign="middle">
-            <heading>Education</heading>   
-            <table>
-              <tr>
-                <td width="70%">
-                  <b>University of Rochester</b>, NY, USA<br/>
-                  Ph.D. Sept. 2022 to Future <br/>
-                  Computer Science
-                </td>
-                <td width="12%">
-                  <img src="image/ur_logo.png" width=110px style="display: flex; justify-content: center;">
-                </td>
-              </tr>
-              <tr>
-                <td width="70%">
-                  <b>University of Chinese Academy of Sciences</b>, Beijing, China<br/>
-                  B.Eng. Sept. 2018 to Jul. 2022 <br/>
-                  Computer Science
-                </td>
-                <td width="12%">
-                  <img src="image/ucas_logo.jpeg" width=110px style="display: flex; justify-content: center;">
-                </td>
-              </tr>
-              </table>        
-          </td>
-        </tr>
-        </table>
-
-        <!-- Experience -->
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-        <tr>
-          <td width="100%" valign="middle">
-            <heading>Research Experiences</heading>   
-            <table>
-              <tr>
-                <td width="70%">
-                  <b><a href="https://about.meta.com/realitylabs/">Reality Labs Research</a>, Meta</b>, PA, USA<br/>
-                  Reserach Scientist Intern &bull; May 2024 to Aug. 2024<br/>
-                  Advisors: Dr. <a href="https://scholar.google.com/citations?user=cyAYD3UAAAAJ&hl=en">Dejan Markovic</a>, Dr. <a href="https://scholar.google.it/citations?user=5RFgT84AAAAJ&hl=en">Israel D. Gebru</a>, and Dr. <a href="https://scholar.google.de/citations?user=73DTbNAAAAAJ&hl=de">Alexander Richard</a>
-                </td>
-                <td width="12%">
-                  <img src="image/meta_logo.png" width=110px style="display: flex; justify-content: center;">
-                </td>
-              </tr>
-
-              <tr>
-                <td width="70%">
-                  <b><a href="http://vllab.ucmerced.edu/">Vision and Learning Lab</a>, University of California - Merced</b>, CA, USA<br/>
-                  Reserach Intern &bull; Sept. 2021 to Mar. 2022<br/>
-                  Advisors: Prof. <a href="https://scholar.google.com/citations?user=p9-ohHsAAAAJ&hl=en">Ming-Hsuan Yang</a> and Dr. <a href="https://scholar.google.com/citations?user=Op_tr2IAAAAJ&hl=en">Taihong Xiao</a>
-                </td>
-                <td width="12%">
-                  <img src="image/ucm_logo.png" width=110px style="display: flex; justify-content: center;">
-                </td>
-              </tr>
-
-              <tr>
-                <td width="70%">
-                  <b><a href="https://air.tsinghua.edu.cn/EN/">Institute for AI Industry Research</a>, Tsinghua University</b>, Beijing, China<br/>
-                  Reserach Intern &bull; Jun. 2021 to Aug. 2021<br/>
-                  Advisors: Dr. Yizhi Wang and Dr. Hao Xu
-                </td>
-                <td width="12%">
-                  <img src="image/tsinghua_logo.png" width=110px style="display: flex; justify-content: center;">
-                </td>
-              </tr>
-
-              <tr>
-                <td width="70%">
-                  <b><a href="https://vipl.ict.ac.cn/en/">Visual Information Processing and Learning Group</a>, Chinese Academy of Sciences</b>, Beijing, China<br/>
-                  Reserach Assistant &bull; Feb. 2020 to Apr. 2021<br/>
-                  Advisors: Prof. <a href="https://scholar.google.com/citations?user=Vkzd7MIAAAAJ&hl=en">Shiguang Shan</a> and Dr. <a href="https://scholar.google.com/citations?user=8wizL74AAAAJ&hl=en">Shuang Yang</a>
-                </td>
-                <td width="12%">
-                  <img src="image/ucas_logo.jpeg" width=110px style="display: flex; justify-content: center;">
-                </td>
-              </tr>
-              </table>        
-          </td>
-        </tr>
-        </table>
-
-        <!-- Acknowledgements -->
-        <table width="100%" align="center" border="0" cellspacing="0" cellpadding="20">
-        <tr>
-            <br/>
-            <p align="right">
-            <font size="2">
-            Website source from <a href="https://haidongz-usc.github.io/">Haidong Zhu</a>. Great thanks.
-            </font>
-            </p>
-        </tr>
-        </table>
-
-
-      </td>
-    </tr>
-  </table>
+  </div>
 </body>
 </html>
