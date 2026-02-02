@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omni-Judge</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma-slider@2.0.4/dist/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bulma-carousel@4.0.4/dist/js/bulma-carousel.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bulma-slider@2.0.4/dist/js/bulma-slider.min.js"></script>
+
+  <style>
+    .rainbow {
+      text-align: center;
+      text-decoration: underline;
+      font-size: 32px;
+      font-family: monospace;
+      letter-spacing: 5px;
+    }
+    .rainbow_text_animated {
+      background: linear-gradient(to right, #6666ff, #0099ff , #00ff00, #ff3399, #6666ff);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      animation: rainbow_animation 6s ease-in-out infinite;
+      background-size: 400% 100%;
+    }
+
+    @keyframes rainbow_animation {
+      0%,100% {
+          background-position: 0 0;
+      }
+      50% {
+          background-position: 100% 0;
+      }
+    }
+
+    .publication-title {
+      margin-bottom: 0.5rem;
+    }
+    .publication-subtitle {
+      margin-bottom: 0.5rem;
+    }
+    .publication-authors {
+      margin-bottom: 0.5rem;
+    }
+    .author-block {
+      display: inline-block;
+      margin-right: 0.5rem;
+    }
+    .link-block {
+      display: inline-block;
+      margin: 0 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">
+              <span class="rainbow_text_animated">Omni-Judge</span>
+            </h1>
+            <h2 class="subtitle is-3 publication-subtitle" style="margin-bottom: 0px;">
+              Omni-Judge: Can Omni-LLMs Serve as Human-Aligned Judges for Text-Conditioned Audio-Video Generation?
+            </h2> 
+            <div class="is-size-5 publication-authors" style="width: 80%; margin: 20px auto;">
+              <span class="author-block">Susan Liang<sup style="color:#2c3e50;">1</sup>,</span>
+              <span class="author-block">Chao Huang<sup style="color:#2c3e50;">1</sup>,</span>
+              <span class="author-block">Filippos Bellos<sup style="color:#2c3e50;">2</sup>,</span>
+              <span class="author-block">Yolo Yunlong Tang<sup style="color:#2c3e50;">1</sup>,</span>
+              <span class="author-block">Qianxiang Shen<sup style="color:#2c3e50;">1</sup>,</span>
+              <span class="author-block">Jing Bi<sup style="color:#2c3e50;">1</sup>,</span>
+              <span class="author-block">Luchuan Song<sup style="color:#2c3e50;">1</sup>,</span>
+              <span class="author-block">Zeliang Zhang<sup style="color:#2c3e50;">1</sup>,</span>
+              <span class="author-block">Jason Corso<sup style="color:#2c3e50;">2</sup>,</span>
+              <span class="author-block">Chenliang Xu<sup style="color:#2c3e50;">1</sup></span>
+            </div>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup style="color:#2c3e50">1</sup>University of Rochester,</span>
+              <span class="author-block"><sup style="color:#2c3e50">2</sup>University of Michigan, Ann Arbor</span>
+            </div>
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!--
+                <span class="link-block">
+                  <a href="https://liangsusan-git.github.io/project/omni_judge/paper.pdf" class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="#" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code (Coming Soon)</span>
+                  </a>
+                </span>
+                -->
+                <span class="link-block">
+                  <a href="#citation" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <p style="font-size:18px">📃</p>
+                    </span>
+                    <span>Cite</span>
+                  </a>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              State-of-the-art text-to-video generation models such as Sora 2 and Veo 3 can now produce high-fidelity videos with synchronized audio directly from a textual prompt, marking a new milestone in multi-modal generation. However, evaluating such tri-modal outputs remains an unsolved challenge. Human evaluation is reliable but costly and difficult to scale, while traditional automatic metrics, such as FVD, CLAP, and ViCLIP, focus on isolated modality pairs, struggle with complex prompts, and provide limited interpretability. Omni-modal large language models (omni-LLMs) present a promising alternative: they naturally process audio, video, and text, support rich reasoning, and offer interpretable chain-of-thought feedback. Driven by this, we introduce Omni-Judge, a study assessing whether omni-LLMs can serve as human-aligned judges for text-conditioned audio-video generation. Across nine perceptual and alignment metrics, Omni-Judge achieves correlation comparable to traditional metrics and excels on semantically demanding tasks such as audio-text alignment, video-text alignment, and audio-video-text coherence. It underperforms on high-FPS perceptual metrics, including video quality and audio-video synchronization, due to limited temporal resolution. Omni-Judge provides interpretable explanations that expose semantic or physical inconsistencies, enabling practical downstream uses such as feedback-based refinement. Our findings highlight both the potential and current limitations of omni-LLMs as unified evaluators for multi-modal generation.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Audio-Video Generation Characteristics</h2>
+          <p class="content has-text-justified mb-5">
+            We present several samples generated by Sora 2 and Veo 3. These samples demonstrate the limitations of the current state-of-the-art text-to-video generation models: color jittering, motion inconsistency, and audio-video desynchronization, as well as one feature of the audio-video generation models: ambiguous audio generation.
+          </p>
+
+          <h3 class="title is-4 mt-6 mb-4">Color Jittering</h3>
+          <p class="content has-text-justified mb-5">
+            Sora 2 shows noticeable color jittering, while Veo 3 produces sharper and more stable frames with smoother temporal consistency.
+          </p>
+          <p class="content has-text-justified mb-5"><em>
+            <b>Prompt:</b> Millet has a set of characteristics that optimize farmers' resources, requiring less water compared to corn and sorghum, while at the same time producing high-quality grains with good market acceptance.
+          </em></p>
+          <div class="columns">
+            <div class="column">
+              <div class="box">
+                <h4 class="title is-6 mb-3">Sora 2 (Color Jittering)</h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/sora_1.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="column">
+              <div class="box">
+                <h4 class="title is-6 mb-3">Veo 3</h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/f29a0b3c-c635-5f43-b20d-a8f0c6827e22.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="title is-4 mt-6 mb-4">Motion Inconsistency</h3>
+          <p class="content has-text-justified mb-5">
+            Sora 2 exhibits frame freezing, whereas Veo 3 maintains fluent motion and higher temporal stability across frames.
+          </p>
+          <p class="content has-text-justified mb-5"><em>
+            <b>Prompt:</b> Spaceship from Ancient Egypt flying over the desert.
+          </em></p>
+          <div class="columns">
+            <div class="column">
+              <div class="box">
+                <h4 class="title is-6 mb-3">Sora 2 (Frame Freezing)</h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/sora_2.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="column">
+              <div class="box">
+                <h4 class="title is-6 mb-3">Veo 3</h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/bd7737ae-2359-574d-a106-b62cbfbefc21.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="title is-4 mt-6 mb-4">Audio-Video Desynchronization</h3>
+          <p class="content has-text-justified mb-5">
+            Sora 2 produces speech without matching lip motion, while Veo 3 generates keyboard typing sounds without corresponding hand movement, illustrating temporal misalignment between sound and action.
+          </p>
+          <p class="content has-text-justified mb-5"><em>
+            <b>Prompt:</b> Dad talking to his daughter about her teeth.
+          </em></p>
+          <div class="columns">
+            <div class="column">
+              <div class="box">
+                <h4 class="title is-6 mb-3">Sora 2 (Desynchronization)</h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/sora_3_masked.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="column">
+              <div class="box">
+                <h4 class="title is-6 mb-3">Veo 3</h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/084c86a3-8b09-5dcc-b7cf-54c60bbda445.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <p class="content has-text-justified mb-5"><em>
+            <b>Prompt:</b> A speechless llama coding in the dark room.
+          </em></p>
+          <div class="columns">
+            <div class="column">
+              <div class="box">
+                <h4 class="title is-6 mb-3">Sora 2</h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/sora_4_masked.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+            <div class="column">
+              <div class="box">
+                <h4 class="title is-6 mb-3">Veo 3 (Desynchronization)</h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/426f91ce-8482-5f8f-8bdf-0ab3e845704d.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <h3 class="title is-4 mt-6 mb-4">Ambiguous Audio Generation</h3>
+          <p class="content has-text-justified mb-5">
+          Because many prompts do not contain explicit sound descriptions, the models must infer plausible audio to accompany the visual content. We observe three representative cases of inferred audio behavior. (1) models generate a voice narration. For example, Sora 2 generates a coherent voice narration describing the glowing book, aligning narratively with the visual scene. (2) model introduces a human dialogue. For example, Veo 3 introduces a human dialogue to accompany a dog’s reaction, where the speech semantically matches the implied event rather than the subject itself. (3) models adds background music to align with the visual atmosphere. For example, Veo 3 adds resonant background music to evoke a grand and profound atmosphere, reflecting emotional tone rather than concrete visual actions. These findings demonstrate that current models tend to fill audio ambiguity with narrative, conversational, or emotional cues.
+          </p>
+          <p class="content has-text-justified mb-5"><em>
+            <b>Prompt:</b> A spectral glow emanating from the printed Bible, hinting at the mysterious ink.
+          </em></p>
+          <div class="columns">
+            <div class="column">
+              <div class="box">
+                <h4 class="title is-6 mb-3">Sora 2 (Narration)</h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/sora_5_masked.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <p class="content has-text-justified mb-5"><em>
+            <b>Prompt:</b> Dog is suspecting something.
+          </em>
+          </p>
+          <div class="columns">
+            <div class="column">
+              <div class="box">
+                <h4 class="title is-6 mb-3">Sora 2 (Dialogue)</h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/sora_6.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <p class="content has-text-justified mb-5"><em>
+            <b>Prompt:</b> Stars twinkled in the sky and the moon rose.
+          </em></p>
+          <div class="columns">
+            <div class="column">
+              <div class="box">
+                <h4 class="title is-6 mb-3">Veo 3 (Background Music)</h4>
+                <video class="has-ratio" width="100%" controls>
+                  <source src="source/0ce4d593-e2c2-5bb4-8d72-90f95f99f0b8.mp4" type="video/mp4">
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="citation">
+    <div class="container">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Citation</h2>
+          <div class="content has-text-justified">
+            <pre style="background-color: #f5f5f5; padding: 1em; border-radius: 4px; overflow-x: auto;">
+@article{omni_judge2026,
+  title={Omni-Judge: Can Omni-LLMs Serve as Human-Aligned Judges for Text-Conditioned Audio-Video Generation?},
+  author={Liang, Susan and Huang, Chao and Bellos, Filippos and Tang, Yolo Yunlong and Shen, Qianxiang and Bi, Jing and Song, Luchuan and Zhang, Zeliang and Corso, Jason and Xu, Chenliang},
+  journal={arXiv preprint},
+  year={2026}
+}</pre>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
