@@ -156,7 +156,7 @@
           Hi, there! I am a forth-year Ph.D. student in the Computer Science Department at the University of Rochester. My advisor is Prof. <a href="https://scholar.google.com/citations?user=54HfyDIAAAAJ&hl=en" class="link">Chenliang Xu</a>. Before joining Prof. Xu's lab, I got my bachelor degree of Computer Science at the University of Chinese Academy of Sciences. I was lucky to study and research under the supervision of Prof. <a href="https://scholar.google.com/citations?user=Vkzd7MIAAAAJ&hl=en" class="link">Shiguang Shan</a>. I joined Prof. Shan's group in 2020 and had worked there for one and a half years, enjoying an exciting research experience. I also worked closely with Prof. <a href="https://scholar.google.com/citations?user=p9-ohHsAAAAJ&hl=en" class="link">Ming-Hsuan Yang</a>.
         </p>
         <p class="text-lg text-gray-700 mb-4 leading-relaxed">
-          My research interests lie in Computer Vision and Deep Learning, especially audio-visual learning, implicit neural fields, multi-modal learning, and trustworthy AI.
+          My research interests lie in Computer Vision and Deep Learning, especially vision-language models/agents, multi-modal learning, spatial audio generation, and audio-visual synthesis.
         </p>
         <p class="text-md text-red-600 font-semibold mb-6 p-3 bg-red-50 border border-red-200 rounded-lg">
           <span class="text-xl mr-1">✉️</span> I am actively seeking US-based internships for Summer 2026 and China-based full-time opportunities for 2027. Feel free to reach out if you’re interested. Email address and phone number are available in the CV.
@@ -199,6 +199,20 @@
 
         <div class="space-y-10" id="publications-container">
 
+          <article class="pub-article flex flex-col md:flex-row md:items-center md:space-x-6" data-categories="llm">
+            <img src="project/adaturn.png" alt="AdaTurn Teaser" class="w-64 h-auto object-cover rounded-lg shadow-md flex-shrink-0 mb-4 md:mb-0 mx-auto md:mx-0" onerror="this.onerror=null; this.src='https://placehold.co/256x144/e0f2fe/0891b2?text=AdaTurn';">
+            <div class="flex-1">
+              <h3 class="text-lg font-semibold text-gray-800 mt-1 mb-1">AdaTurn: Scaling Visual Search Agents via Turn-Aware Dynamic Reasoning</h3>
+              <p class="text-sm text-gray-600 mb-2">
+                <b>Susan Liang</b>, Chao Huang, Chenliang Xu
+              </p>
+              <p class="text-sm text-gray-500">arXiv preprint, 2026</p>
+              <div class="mt-2 space-x-3">
+                 Coming soon...
+              </div>
+            </div>
+          </article>
+
           <article class="pub-article flex flex-col md:flex-row md:items-center md:space-x-6" data-categories="llm generation">
             <img src="project/omni_judge/source/teaser.png" alt="OmniJudge Teaser" class="w-64 h-auto object-cover rounded-lg shadow-md flex-shrink-0 mb-4 md:mb-0 mx-auto md:mx-0" onerror="this.onerror=null; this.src='https://placehold.co/256x144/e0f2fe/0891b2?text=OmniJudge';">
             <div class="flex-1">
@@ -207,10 +221,55 @@
               <p class="text-sm text-gray-600 mb-2">
                 <b>Susan Liang</b>, Chao Huang, Filippos Bellos, Yolo Yunlong Tang, Qianxiang Shen, Jing Bi, Luchuan Song, Zeliang Zhang, Jason Corso, Chenliang Xu
               </p>
-              <p class="text-sm text-gray-500">arXiv preprint, 2026.</p>
+              <p class="text-sm text-gray-500">arXiv preprint, 2026</p>
               <div class="mt-2 space-x-3">
                  <a href="https://arxiv.org/abs/2602.01623" class="link">[Paper]</a>
                  <a href="project/omni_judge/" class="link">[Website]</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="pub-article flex flex-col md:flex-row md:items-center md:space-x-6" data-categories="llm">
+            <img src="project/async_vlm.png" alt="Async VLM Teaser" class="w-64 h-auto object-cover rounded-lg shadow-md flex-shrink-0 mb-4 md:mb-0 mx-auto md:mx-0" onerror="this.onerror=null; this.src='https://placehold.co/256x144/e0f2fe/0891b2?text=Async+VLM';">
+            <div class="flex-1">
+              <div><span class="venue-badge">CVPR 2026</span></div>
+              <h3 class="text-lg font-semibold text-gray-800 mt-1 mb-1">Asynchronous Temporal Modeling with Two-Agent Framework for Streaming Dense Video Captioning</h3>
+              <p class="text-sm text-gray-600 mb-2">
+                Yolo Yunlong Tang, Chao Huang, <b>Susan Liang</b>, Jing Bi, Yicheng Wang, Daiki Shimada, Chenliang Xu
+              </p>
+              <p class="text-sm text-gray-500">The IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2026</p>
+              <div class="mt-2 space-x-3">
+                 Coming soon...
+              </div>
+            </div>
+          </article>
+
+          <article class="pub-article flex flex-col md:flex-row md:items-center md:space-x-6" data-categories="generation">
+            <img src="project/tdmm_lm.png" alt="TDMM-LM Teaser" class="w-64 h-auto object-cover rounded-lg shadow-md flex-shrink-0 mb-4 md:mb-0 mx-auto md:mx-0" onerror="this.onerror=null; this.src='https://placehold.co/256x144/e0f2fe/0891b2?text=TDMM-LM';">
+            <div class="flex-1">
+              <div><span class="venue-badge">CVPR 2026</span></div>
+              <h3 class="text-lg font-semibold text-gray-800 mt-1 mb-1">Bridging Facial Understanding and Animation via Language Models</h3>
+              <p class="text-sm text-gray-600 mb-2">
+                Luchuan Song, Pinxin Liu, Haiyang Liu, Zhenchao Jin, Yolo Yunlong Tang, Zichong Xu, <b>Susan Liang</b>, Jing Bi, Jason J. Corso, Chenliang Xu
+              </p>
+              <p class="text-sm text-gray-500">The IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2026</p>
+              <div class="mt-2 space-x-3">
+                 <a href="https://songluchuan.github.io/TDMM-LM/" class="link">[Website]</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="pub-article flex flex-col md:flex-row md:items-center md:space-x-6" data-categories="llm">
+            <img src="project/when2look.png" alt="When Teaser" class="w-64 h-auto object-cover rounded-lg shadow-md flex-shrink-0 mb-4 md:mb-0 mx-auto md:mx-0" onerror="this.onerror=null; this.src='https://placehold.co/256x144/e0f2fe/0891b2?text=When2ThinkWhen2Look';">
+            <div class="flex-1">
+              <div><span class="venue-badge">CVPR 2026</span></div>
+              <h3 class="text-lg font-semibold text-gray-800 mt-1 mb-1">When to Think and When to Look: Uncertainty-Guided Lookback</h3>
+              <p class="text-sm text-gray-600 mb-2">
+                Jing Bi, Filippos Bellos, Junjia Guo, Yayuan Li, Chao Huang, Yolo Y. Tang, Luchuan Song, <b>Susan Liang</b>, Zhongfei Mark Zhang, Jason J. Corso, Chenliang Xu
+              </p>
+              <p class="text-sm text-gray-500">The IEEE/CVF Conference on Computer Vision and Pattern Recognition, 2026</p>
+              <div class="mt-2 space-x-3">
+                 <a href="https://arxiv.org/abs/2511.15613" class="link">[Paper]</a>
               </div>
             </div>
           </article>
@@ -227,7 +286,7 @@
               <p class="text-sm text-gray-600 mb-2">
                 Yunlong Tang, Jing Bi, Chao Huang, <b>Susan Liang</b>, Daiki Shimada, Hang Hua, Yunzhong Xiao, Yizhi Song, Pinxin Liu, Mingqian Feng, Junjia Guo, Zhuo Liu, Luchuan Song, Ali Vosoughi, Jinxi He, Liu He, Zeliang Zhang, Jiebo Luo, Chenliang Xu
               </p>
-              <p class="text-sm text-gray-500">The Association for the Advancement of Artificial Intelligence (AAAI), 2026.</p>
+              <p class="text-sm text-gray-500">The Association for the Advancement of Artificial Intelligence (AAAI), 2026</p>
               <div class="mt-2 space-x-3">
                  <a href="https://arxiv.org/abs/2504.05541" class="link">[Paper]</a>
                  <a href="https://github.com/yunlong10/CAT-V" class="link">[Code]</a>
@@ -242,24 +301,10 @@
               <p class="text-sm text-gray-600 mb-2">
                 Jing Bi, <b>Susan Liang</b>, Xiaofei Zhou, Pinxin Liu, Junjia Guo, Yunlong Tang, Luchuan Song, Chao Huang, Ali Vosoughi, Guangyu Sun, Jinxi He, Jiarui Wu, Shu Yang, Daoan Zhang, Chen Chen, Lianggong Bruce Wen, Zhang Liu, Jiebo Luo, Chenliang Xu
               </p>
-              <p class="text-sm text-gray-500">arXiv preprint, 2025.</p>
+              <p class="text-sm text-gray-500">arXiv preprint, 2025</p>
               <div class="mt-2 space-x-3">
                  <a href="https://arxiv.org/abs/2504.03151" class="link">[Paper]</a>
                  <a href="https://page-reason.jing.vision/" class="link">[Website]</a>
-              </div>
-            </div>
-          </article>
-
-          <article class="pub-article flex flex-col md:flex-row md:items-center md:space-x-6" data-categories="llm">
-            <img src="project/when2look.png" alt="When Teaser" class="w-64 h-auto object-cover rounded-lg shadow-md flex-shrink-0 mb-4 md:mb-0 mx-auto md:mx-0" onerror="this.onerror=null; this.src='https://placehold.co/256x144/e0f2fe/0891b2?text=When2ThinkWhen2Look';">
-            <div class="flex-1">
-              <h3 class="text-lg font-semibold text-gray-800 mt-1 mb-1">When to Think and When to Look: Uncertainty-Guided Lookback</h3>
-              <p class="text-sm text-gray-600 mb-2">
-                Jing Bi, Filippos Bellos, Junjia Guo, Yayuan Li, Chao Huang, Yolo Y. Tang, Luchuan Song, <b>Susan Liang</b>, Zhongfei Mark Zhang, Jason J. Corso, Chenliang Xu
-              </p>
-              <p class="text-sm text-gray-500">arXiv preprint, 2025.</p>
-              <div class="mt-2 space-x-3">
-                 <a href="https://arxiv.org/abs/2511.15613" class="link">[Paper]</a>
               </div>
             </div>
           </article>
@@ -271,7 +316,7 @@
               <p class="text-sm text-gray-600 mb-2">
                 Jing Bi, Junjia Guo, <b>Susan Liang</b>, Guangyu Sun, Luchuan Song, Yunlong Tang, Jinxi He, Jiarui Wu, Ali Vosoughi, Chen Chen, Chenliang Xu
               </p>
-              <p class="text-sm text-gray-500">arXiv preprint, 2025.</p>
+              <p class="text-sm text-gray-500">arXiv preprint, 2025</p>
               <div class="mt-2 space-x-3">
                  <a href="https://arxiv.org/abs/2503.11557" class="link">[Paper]</a>
                  <a href="https://page-verify.jing.vision/" class="link">[Website]</a>
@@ -289,7 +334,7 @@
               <p class="text-sm text-gray-600 mb-2">
                 Chao Huang, <b>Susan Liang</b>, Yapeng Tian, Anurag Kumar, Chenliang Xu
               </p>
-              <p class="text-sm text-gray-500">International Journal of Computer Vision, 2025.</p>
+              <p class="text-sm text-gray-500">International Journal of Computer Vision, 2025</p>
               <div class="mt-2 space-x-3">
                  <a href="https://arxiv.org/abs/2308.00122" class="link">[Paper]</a>
                  <a href="https://wikichao.github.io/data/projects/DAVIS/" class="link">[Website]</a>
@@ -306,7 +351,7 @@
               <p class="text-sm text-gray-600 mb-2">
                 Chao Huang, Yuesheng Ma, Junxuan Huang, <b>Susan Liang</b>, Yunlong Tang, Jing Bi, Wenqiang Liu, Nima Mesgarani, Chenliang Xu
               </p>
-              <p class="text-sm text-gray-500">The Thirty-Ninth Annual Conference on Neural Information Processing Systems, Dec. 2025.</p>
+              <p class="text-sm text-gray-500">The Thirty-Ninth Annual Conference on Neural Information Processing Systems, Dec. 2025</p>
               <div class="mt-2 space-x-3">
                  <a href="https://arxiv.org/pdf/2505.23625" class="link">[Paper]</a>
                  <a href="https://wikichao.github.io/ZeroSep/" class="link">[Website]</a>
@@ -323,7 +368,7 @@
               <p class="text-sm text-gray-600 mb-2">
                 Jiani Liu*, Zhiyuan Wang*, Zeliang Zhang*, Chao Huang, <b>Susan Liang</b>, Yunlong Tang, Chenliang Xu. (* indicates equal contribution)
               </p>
-              <p class="text-sm text-gray-500">The Thirty-Ninth Annual Conference on Neural Information Processing Systems, Dec. 2025.</p>
+              <p class="text-sm text-gray-500">The Thirty-Ninth Annual Conference on Neural Information Processing Systems, Dec. 2025</p>
               <div class="mt-2 space-x-3">
                  <a href="https://arxiv.org/pdf/2504.10804" class="link">[Paper]</a>
               </div>
@@ -338,7 +383,7 @@
               <p class="text-sm text-gray-600 mb-2">
                 Yunlong Tang, Pinxin Liu, Mingqian Feng, ..., <b>Susan Liang</b>, ..., Luchuan Song, Zeliang Zhang, Chenliang Xu.
               </p>
-              <p class="text-sm text-gray-500">The Thirty-Ninth Annual Conference on Neural Information Processing Systems, Dec. 2025.</p>
+              <p class="text-sm text-gray-500">The Thirty-Ninth Annual Conference on Neural Information Processing Systems, Dec. 2025</p>
               <div class="mt-2 space-x-3">
                  <a href="https://arxiv.org/abs/2505.20426" class="link">[Paper]</a>
                  <a href="https://yunlong10.github.io/MMPerspective/" class="link">[Website]</a>
@@ -357,7 +402,7 @@
               <p class="text-sm text-gray-600 mb-2">
                 Yunlong Tang, Jing Bi, Pinxin Liu, ..., <b>Susan Liang</b>, ..., Han Liu, Jiebo Luo, Chenliang Xu.
               </p>
-              <p class="text-sm text-gray-500">arXiv preprint, 2025.</p>
+              <p class="text-sm text-gray-500">arXiv preprint, 2025</p>
               <div class="mt-2 space-x-3">
                  <a href="https://arxiv.org/abs/2510.05034" class="link">[Paper]</a>
                  <a href="https://github.com/yunlong10/Awesome-Video-LMM-Post-Training" class="link">[Code]</a>
@@ -373,7 +418,7 @@
               <p class="text-sm text-gray-600 mb-2">
                 <b>Susan Liang</b>, Chao Huang, Yunlong Tang, Zeliang Zhang, Chenliang Xu.
               </p>
-              <p class="text-sm text-gray-500">International Conference on Computer Vision, Oct. 2025.</p>
+              <p class="text-sm text-gray-500">International Conference on Computer Vision, Oct. 2025</p>
               <div class="mt-2 space-x-3">
                  <a href="project/pi_avas/paper.pdf" class="link">[Paper]</a>
                  <a href="project/pi_avas/" class="link">[Website]</a>
@@ -389,7 +434,7 @@
               <p class="text-sm text-gray-600 mb-2">
                 <b>Susan Liang</b>, Dejan Markovic, Israel D. Gebru, Steven Krenn, Todd Keebler, Jacob Sandakly, Frank Yu, Samuel Hassel, Chenliang Xu, Alexander Richard.
               </p>
-              <p class="text-sm text-gray-500">Forty-second International Conference on Machine Learning, Jul. 2025.</p>
+              <p class="text-sm text-gray-500">Forty-second International Conference on Machine Learning, Jul. 2025</p>
               <div class="mt-2 space-x-3">
                  <a href="https://arxiv.org/pdf/2505.22865" class="link">[Paper]</a>
                  <a href="project/binauralflow/" class="link">[Website]</a>
@@ -405,7 +450,7 @@
               <p class="text-sm text-gray-600 mb-2">
                 Yunlong Tang, Junjia Guo, Hang Hua, <b>Susan Liang</b>, Mingqian Feng, Xinyang Li, Rui Mao, Chao Huang, Jing Bi, Zeliang Zhang, Pooyan Fazli, Chenliang Xu.
               </p>
-              <p class="text-sm text-gray-500">The IEEE/CVF Conference on Computer Vision and Pattern Recognition, Jun. 2025.</p>
+              <p class="text-sm text-gray-500">The IEEE/CVF Conference on Computer Vision and Pattern Recognition, Jun. 2025</p>
               <div class="mt-2 space-x-3">
                  <a href="https://arxiv.org/pdf/2411.10979" class="link">[Paper]</a>
                  <a href="https://yunlong10.github.io/VidComposition/" class="link">[Website]</a>
@@ -422,7 +467,7 @@
               <p class="text-sm text-gray-600 mb-2">
                  Zeliang Zhang*, <b>Susan Liang*</b>, Daiki Shimada, Chenliang Xu. (* indicates equal contribution)
               </p>
-              <p class="text-sm text-gray-500">The Thirteenth International Conference on Learning Representations, Apr. 2025.</p>
+              <p class="text-sm text-gray-500">The Thirteenth International Conference on Learning Representations, Apr. 2025</p>
               <div class="mt-2 space-x-3">
                  <a href="https://arxiv.org/abs/2502.11858" class="link">[Paper]</a>
               </div>
@@ -436,7 +481,7 @@
               <p class="text-sm text-gray-600 mb-2">
                  Yunlong Tang, Junjia Guo, Pinxin Liu, Zhiyuan Wang, Hang Hua, Jia-Xing Zhong, Yunzhong Xiao, Chao Huang, Luchuan Song, <b>Susan Liang</b>, and Yizhi Song, Liu He, Jing Bi, Mingqian Feng, Xinyang Li, Zeliang Zhang, Chenliang Xu.
               </p>
-              <p class="text-sm text-gray-500">arXiv preprint.</p>
+              <p class="text-sm text-gray-500">arXiv preprint</p>
               <div class="mt-2 space-x-3">
                  <a href="https://arxiv.org/pdf/2501.06250" class="link">[Paper]</a>
                  <a href="https://github.com/yunlong10/Awesome-AI4Animation" class="link">[Website]</a>
@@ -451,7 +496,7 @@
               <p class="text-sm text-gray-600 mb-2">
                  Zeliang Zhang, Xin Liang, Mingqian Feng, <b>Susan Liang</b>, Chenliang Xu.
               </p>
-              <p class="text-sm text-gray-500">arXiv preprint.</p>
+              <p class="text-sm text-gray-500">arXiv preprint</p>
               <div class="mt-2 space-x-3">
                  <a href="https://arxiv.org/pdf/2410.10160" class="link">[Paper]</a>
               </div>
@@ -465,7 +510,7 @@
               <p class="text-sm text-gray-600 mb-2">
                  Chao Huang, <b>Susan Liang</b>, Yunlong Tang, Yapeng Tian, Anurag Kumar, Chenliang Xu.
               </p>
-              <p class="text-sm text-gray-500">arXiv preprint.</p>
+              <p class="text-sm text-gray-500">arXiv preprint</p>
               <div class="mt-2 space-x-3">
                  <a href="https://arxiv.org/pdf/2410.24151" class="link">[Paper]</a>
                  <a href="https://wikichao.github.io/ScalingConcept/" class="link">[Website]</a>
@@ -485,7 +530,7 @@
               <p class="text-sm text-gray-600 mb-2">
                  Chao Huang, <b>Susan Liang</b>, Yapeng Tian, Anurag Kumar, Chenliang Xu.
               </p>
-              <p class="text-sm text-gray-500">17th Asian Conference on Computer Vision, Dec. 2024.</p>
+              <p class="text-sm text-gray-500">17th Asian Conference on Computer Vision, Dec. 2024</p>
               <div class="mt-2 space-x-3">
                  <a href="https://arxiv.org/abs/2308.00122" class="link">[Paper]</a>
                  <a href="https://wikichao.github.io/data/projects/DAVIS/" class="link">[Website]</a>
@@ -504,7 +549,7 @@
               <p class="text-sm text-gray-600 mb-2">
                  <b>Susan Liang</b>, Chao Huang, Yapeng Tian, Anurag Kumar, Chenliang Xu.
               </p>
-              <p class="text-sm text-gray-500">17th Asian Conference on Computer Vision, Dec. 2024.</p>
+              <p class="text-sm text-gray-500">17th Asian Conference on Computer Vision, Dec. 2024</p>
               <div class="mt-2 space-x-3">
                  <a href="https://arxiv.org/abs/2410.07463" class="link">[Paper]</a>
                  <a href="project/avedit/" class="link">[Website]</a>
@@ -521,7 +566,7 @@
               <p class="text-sm text-gray-600 mb-2">
                  Rongyi Zhu*, Zeliang Zhang*, <b>Susan Liang</b>, Zhuo Liu, Chenliang Xu. (* indicates equal contribution)
               </p>
-              <p class="text-sm text-gray-500">Conference on Computer Vision and Pattern Recognition, Jun. 2024.</p>
+              <p class="text-sm text-gray-500">Conference on Computer Vision and Pattern Recognition, Jun. 2024</p>
               <div class="mt-2 space-x-3">
                  <a href="https://arxiv.org/abs/2405.14077" class="link">[Paper]</a>
               </div>
@@ -536,7 +581,7 @@
               <p class="text-sm text-gray-600 mb-2">
                  Zeliang Zhang, Wei Yao, <b>Susan Liang</b>, Chenliang Xu.
               </p>
-              <p class="text-sm text-gray-500">Conference of the European Chapter of the Association for Computational Linguistics, Mar. 2024.</p>
+              <p class="text-sm text-gray-500">Conference of the European Chapter of the Association for Computational Linguistics, Mar. 2024</p>
               <div class="mt-2 space-x-3">
                  <a href="https://aclanthology.org/2024.findings-eacl.83.pdf" class="link">[Paper]</a>
               </div>
@@ -554,7 +599,7 @@
               <p class="text-sm text-gray-600 mb-2">
                  Yunlong Tang*, Jing Bi*, Siting Xu*, Luchuan Song*, <b>Susan Liang</b>, Teng Wang, Daoan Zhang, Jie An, Jingyang Lin, Rongyi Zhu, Ali Vosoughi, Chao Huang, Zeliang Zhang, Feng Zheng, Jianguo Zhang, Ping Luo, Jiebo Luo, Chenliang Xu. (* indicates equal contribution)
               </p>
-              <p class="text-sm text-gray-500">IEEE Transactions on Circuits and Systems for Video Technology.</p>
+              <p class="text-sm text-gray-500">IEEE Transactions on Circuits and Systems for Video Technology</p>
               <div class="mt-2 space-x-3">
                  <a href="https://arxiv.org/abs/2312.17432" class="link">[Paper]</a>
                  <a href="https://github.com/yunlong10/Awesome-LLMs-for-Video-Understanding" class="link">[Website]</a>
@@ -570,7 +615,7 @@
               <p class="text-sm text-gray-600 mb-2">
                  <b>Susan Liang</b>, Chao Huang, Yapeng Tian, Anurag Kumar, Chenliang Xu.
               </p>
-              <p class="text-sm text-gray-500">Conference on Neural Information Processing Systems, Dec. 2023.</p>
+              <p class="text-sm text-gray-500">Conference on Neural Information Processing Systems, Dec. 2023</p>
               <div class="mt-2 space-x-3">
                  <a href="https://arxiv.org/abs/2302.02088" class="link">[Paper]</a>
                  <a href="project/avnerf/" class="link">[Website]</a>
@@ -587,7 +632,7 @@
               <p class="text-sm text-gray-600 mb-2">
                  <b>Susan Liang</b>, Chao Huang, Yapeng Tian, Anurag Kumar, Chenliang Xu.
               </p>
-              <p class="text-sm text-gray-500">International Conference on Computer Vision Workshops, Oct. 2023.</p>
+              <p class="text-sm text-gray-500">International Conference on Computer Vision Workshops, Oct. 2023</p>
               <div class="mt-2 space-x-3">
                  <a href="https://arxiv.org/abs/2309.15977" class="link">[Paper]</a>
                  <a href="project/nacf/" class="link">[Website]</a>
@@ -606,7 +651,7 @@
               <p class="text-sm text-gray-600 mb-2">
                  Yuanhang Zhang∗, <b>Susan Liang∗</b>, Shuang Yang, Xiao Liu, Zhongqin Wu, Shiguang Shan, Xilin Chen. (* indicates equal contribution)
               </p>
-              <p class="text-sm text-gray-500">ACM International Conference on Multimedia, Oct. 2021.</p>
+              <p class="text-sm text-gray-500">ACM International Conference on Multimedia, Oct. 2021</p>
               <div class="mt-2 space-x-3">
                  <a href="https://arxiv.org/abs/2108.02607" class="link">[Paper]</a>
                  <a href="https://unicon-asd.github.io/" class="link">[Website]</a>
